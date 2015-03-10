@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>My Webapp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body class="billboards">
+    <header><a class="logo"><img src="/images/logo.png"></a><a href="" class="btn send">Отправить заказ</a>
+      <div class="wrapper"><img src="/images/ico-billboards.png" class="ico">
+        <h1>Размещение на щитах</h1>
+      </div>
+    </header>
+    <div class="decals"></div>
+    <div class="teaser">
+      Рекламное агентство «Трибуна» владеет собственной сетью рекламных
+      конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
+    </div>
+    <div class="tabs-btn"><a href="" class="list-view">Списком</a><a href="" class="map-view active">На карте</a></div>
+    <div class="tabs">
+      <div id="billboard-map" class="tab"></div>
+    </div>
+    <script>
+      billboards_json = {
+        "center": [47.25221300, 39.69359700],
+        "zoom": 10,
+        "items": [{
+          "id": 1,
+          "position": [47.25221300, 39.69359700],
+          "type": "yellow",
+          "address": "Соколова, 18",
+          "reserved": 12.06,
+          "price": "12 800",
+          "photo": "http://dummyimage.com/748x370/",
+        }],
+      }
+    </script>
+    <div class="footer"></div>
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

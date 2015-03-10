@@ -1,0 +1,29 @@
+extends layout
+
+block vars
+ - var bodyClass = "billboards";
+
+block content
+  .decals
+  .teaser.
+    Рекламное агентство «Трибуна» владеет собственной сетью рекламных
+    конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
+  .tabs-btn
+    a.list-view(href="") Списком
+    a.map-view.active(href="") На карте
+  .tabs
+    .tab#billboard-map
+  script.
+    billboards_json = {
+      "center": [47.25221300, 39.69359700],
+      "zoom": 10,
+      "items": [{
+        "id": 1,
+        "position": [47.25221300, 39.69359700],
+        "type": "yellow",
+        "address": "Соколова, 18",
+        "reserved": 12.06,
+        "price": "12 800",
+        "photo": "http://dummyimage.com/748x370/",
+      }],
+    }
