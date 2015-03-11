@@ -10,7 +10,7 @@ $(function() {
           <div class="info">\
             <span class="reserved">Зарезервирован до <strong>{{properties.reserved}},\</strong></span><br>\
             <strong>{{properties.price}} руб.</strong></div>\
-          <a href="{{properties.photo}}" class="photo">Фото</a>\
+          <a href="{{properties.photo}}" class="photo">Фото</a><br>\
           <a href="" data-id="{{properties.id}}" class="order">Заказать</a>\
         </div>',
     {}),

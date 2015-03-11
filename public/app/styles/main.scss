@@ -101,3 +101,54 @@ body {
     }
   }
 }
+
+.billboard-mark {
+  .mark {
+    width: 53px;
+    height: 65px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 18px;
+    &.yellow {
+      background: url('../images/ico-marker_yellow.png');
+    }
+  }
+  .address {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Circe-Bold';
+    color: #694952;
+    font-size: 18px;
+  }
+  .info {
+    display: block;
+    font-size: 18px;
+    font-family: 'Circe-Regular';
+    color: #694952;
+    line-height: 24px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    strong {
+      font-family: 'Circe-Bold';
+    }
+  }
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #694952;
+  }
+  .photo {
+    border-bottom: 1px solid #694952;
+  }
+  .order {
+    display: inline-block;
+    border: 1px solid #83c07e;
+    border-radius: 2px;
+    padding-left: 18px;
+    padding-right: 58px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 18px;
+    background: url("../images/ico-plus.png") no-repeat 86% center;
+  }
+}
