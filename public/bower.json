@@ -4,6 +4,9 @@
   "dependencies": {
     "jquery": "#^1",
     "modernizr": "~2.8.1",
-    "normalize-scss": "~3.0.2"
+    "normalize-scss": "~3.0.2",
+    "magnific-popup": "~1.0.0",
+    "animate.css": "~3.2.3",
+    "jquery-validation": "~1.13.1"
   }
 }

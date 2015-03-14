@@ -1,0 +1,55 @@
+header {
+  width: 100%;
+  min-width: 1200px;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  position: relative;
+  .logo {
+    left: 50px;
+    position: absolute;
+  }
+  .btn.send {
+    position: absolute;
+    right: 50px;
+    font-family: "Circe-Bold";
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid #99c45a;
+    padding: 0 36px;
+    padding-bottom: 18px;
+    padding-top: 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    z-index: 10;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    h1 {
+      text-transform: uppercase;
+      font-family: "Circe-ExtraBold";
+      color: white;
+      font-size: 56px;
+      line-height: 69px;
+      font-weight: normal;
+    }
+  }
+  &.middle {
+    text-align: center;
+    margin-bottom: 40px;
+    a.logo {
+      position: relative;
+      display: inline-block;
+      left: 0;
+    }
+  }
+}

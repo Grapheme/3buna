@@ -1,5 +1,5 @@
 body {
-  &.billboards {
+  &.billboards, &.request-form {
     background: #694952;
     min-width: 1200px;
     position: relative;
