@@ -1,0 +1,40 @@
+footer {
+  width: 968px;
+  margin: 0 auto;
+  padding: 0 70px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 48px;
+  margin-top: 24px;
+  a {
+    color: inherit;
+  }
+  .left {
+    float: left;
+    line-height: 24px;
+  }
+  .right {
+    float: right;
+    .footer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 420px;
+      li {
+        display: inline-block;
+        width: 205px;
+        vertical-align: top;
+      }
+    }
+  }
+}
+body {
+  &.index {
+    footer {
+      color: #272f32;
+      padding-right: 10px;
+      margin-bottom: 38px;
+    }
+  }
+}

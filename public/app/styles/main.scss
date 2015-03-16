@@ -6,10 +6,115 @@
 @import 'backgrounds';
 @import 'misc';
 @import 'header';
+@import 'footer';
 
+.clrfx {
+  clear: both;
+}
 
 body {
   font-family: "Circe-Regular";
+  min-width: 1200px;
+  &.index {
+    .teaser {
+      color: #272f32;
+      padding-top: 64px;
+      padding-bottom: 78px;
+      font-size: 25px;
+      font-family: 'Circe-Light';
+      width: 845px;
+      letter-spacing: -0.025em;
+      line-height: 45px;
+      small {
+        font-size: 16px;
+        margin-top: 20px;
+        display: inline-block;
+      }
+      a {
+        color: #ff3e2f;
+      }
+    }
+    .content {
+      width: 986px;
+      margin: 0 auto;
+      margin-top: 74px;
+      font-family: 'Circe-Light';
+      margin-bottom: 80px;
+      .top {
+        background: url('../images/deco-billboard-top.png') center top no-repeat;
+        height: 49px;
+        border-bottom: 8px solid #a2c1ca;
+      }
+      .mid {
+        border-left: 8px solid #a2c1ca;
+        border-right: 8px solid #a2c1ca;
+        padding: 74px 100px 90px 100px;
+      }
+      .bottom {
+        height: 171px;
+        background: url('../images/deco-billboard-bottom.png') center top no-repeat;
+        border-top: 8px solid #a2c1ca;
+        position: absolute;
+        width: 986px;
+        z-index: -1;
+      }
+      .header-small {
+        font-family: 'Circe-Bold';
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #363e42;
+        text-align: center;
+        
+      }
+      h1 {
+        text-transform: uppercase;
+        font-family: 'Circe-ExtraBold';
+        font-size: 31px;
+        color: #384144;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 80px;
+      }
+      .info {
+        color: #384144;
+        column-count: 2;
+        column-width: 330px;
+        column-gap: 62px;
+        p {
+          margin-top: 0;
+        }
+        ul {
+          list-style-image: url('../images/bullet-red-shevron.png');
+          padding-left: 20px;
+        }
+      }
+      .desc {
+        text-align: center;
+        width: 100%;
+        background: #edf3f5;
+        color: #384144;
+        padding: 40px 0;
+        margin-top: 40px;
+        margin-bottom: 70px;
+      }
+      .contacts-block {
+        text-transform: uppercase;
+        font-family: 'Circe-Regular';
+        font-size: 31px;
+        color: #384144;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        strong {
+          font-family: 'Circe-ExtraBold';
+        }
+      }
+      .small-map {
+        height: 278px;
+        width: 100%;
+      }
+    }
+  }
 }
 
 .teaser {
@@ -453,4 +558,77 @@ a.send-btn {
       margin-bottom: 100px;
     }
   }
-} 
+}
+
+.activities {
+  width: 100%;
+  min-width: 1200px;
+  section {
+    width: 25%;
+    float: left;
+    padding-top: 62px;
+    padding-bottom: 56px;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    color: white;
+    box-sizing: border-box;
+    .holder {
+      height: 215px;
+    }
+    .title {
+      font-size: 31px;
+      font-family: 'Circe-ExtraBold';
+      line-height: 38px;
+      text-transform: uppercase;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 29px;
+      margin-top: 38px;
+      font-family: 'Circe-Light';
+    }
+    
+    a.more {
+      color: inherit;
+      text-decoration: none;
+      font-family: 'Circe-Bold';
+      font-size: 14px;
+      letter-spacing: -0.025em;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 1px solid white;
+      border-radius: 2px;
+      padding: 0px 27px;
+      display: inline-block;
+      padding-top: 17px;
+      padding-bottom: 14px;
+      margin-top: 40px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    
+    &.billboards {
+      background-color: #724650;
+      background-image: url('../images/deco-activities_billboards.png');
+      background-position-y: 138px;
+      background-position-x: 90%;
+    }
+    &.advert {
+      background-color: #57b97d;
+      background-image: url('../images/deco-activities_narujka.png');
+    }
+    &.imarketing {
+      background-color: #3b4346;
+      background-image: url('../images/deco-activities_imarketing.png');
+    }
+    &.web-sites {
+      background-color: #fe5042;
+      background-image: url('../images/deco-activities_web-sites.png');
+      background-position-y:90px;
+    }
+  }
+}

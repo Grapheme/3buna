@@ -33,7 +33,7 @@ html(class="no-js")
       
     block content
     
-    .footer
+    include includes/footer.jade
     
     script(src='//api-maps.yandex.ru/2.1/?lang=ru_RU')
     // build:js scripts/vendor.js
@@ -43,10 +43,11 @@ html(class="no-js")
     script(src='../bower_components/jquery-validation/dist/jquery.validate.js')
     // endbower
     // endbuild
-
+    script var tribuna_theme_path_ = '' //Без слеша в конце;
     // build:js scripts/main.js
     script(src='scripts/main.js')
     script(src='scripts/tabs.js')
     script(src='scripts/billboards.js')
     script(src='scripts/photo.js')
+    script(src='scripts/maps.js')
     // endbuild

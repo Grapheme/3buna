@@ -2,14 +2,14 @@ var _mapMarkers_ = [];
 
 $(function() {
   var colorIcons = {
-        yellow: '/images/ico-marker_yellow.png',
-        green: '/images/ico-marker_green.png',
-        red: '/images/ico-marker_red.png'
+        yellow: tribuna_theme_path_+'/images/ico-marker_yellow.png',
+        green: tribuna_theme_path_+'/images/ico-marker_green.png',
+        red: tribuna_theme_path_+'/images/ico-marker_red.png'
       },
       colorIconsChecked = {
-        yellow: '/images/ico-marker_yellow_ordered.png',
-        green: '/images/ico-marker_green_ordered.png',
-        red: '/images/ico-marker_red_ordered.png'
+        yellow: tribuna_theme_path_+'/images/ico-marker_yellow_ordered.png',
+        green: tribuna_theme_path_+'/images/ico-marker_green_ordered.png',
+        red: tribuna_theme_path_+'/images/ico-marker_red_ordered.png'
       };
   if (typeof billboards_json !=="undefined"){
     ymaps.ready(function () {
