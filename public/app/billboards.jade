@@ -1,0 +1,181 @@
+extends layout
+
+block vars
+ - var bodyClass = "billboards";
+
+block btn
+  a.btn.send(href="request-form.html") Отправить заказ
+  
+block title
+  img.ico(src="/images/ico-billboards.png")
+  h1 Размещение на щитах
+
+block content
+  .decals
+  .teaser.
+    Рекламное агентство «Трибуна» владеет собственной сетью рекламных
+    конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
+  .tabs-btn
+    a.list-view(href="") Списком
+    a.map-view.active(href="") На карте
+    span.selected <span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span>
+      
+  .tabs
+    .tab#list-view
+      section
+        center
+          h3 Центр
+        table
+          tr(data-id=1)
+            td.dummy
+            td.type.green
+            td.address Буденовский, 139
+            td.price
+              span.numbers 19500 
+              strong рублей 
+              span в месяц
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=2)
+            td.dummy
+            td.type.yellow
+            td.address Буденовский, 139
+            td.price
+              span Зарезервирован до 
+                strong 12.06, 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=3)
+            td.dummy
+            td.type.red
+            td.address Буденовский, 139
+            td.price
+              span доступно через 
+                strong 86 дней 
+              span за 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=4)
+            td.dummy
+            td.type.red
+            td.address Буденовский, 139
+            td.price
+              span доступно через 
+                strong 86 дней 
+              span за 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummysection
+      section
+        center
+          h3 Западный
+        table
+          tr(data-id=5)
+            td.dummy
+            td.type.green
+            td.address Буденовский, 139
+            td.price
+              span.numbers 19500 
+              strong рублей 
+              span в месяц
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=6)
+            td.dummy
+            td.type.yellow
+            td.address Буденовский, 139
+            td.price
+              span Зарезервирован до 
+                strong 12.06, 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=7)
+            td.dummy
+            td.type.red
+            td.address Буденовский, 139
+            td.price
+              span доступно через 
+                strong 86 дней 
+              span за 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+          tr(data-id=8)
+            td.dummy
+            td.type.red
+            td.address Буденовский, 139
+            td.price
+              span доступно через 
+                strong 86 дней 
+              span за 
+              span.numbers 19500 
+              strong руб.
+            td.photo
+              a(href="http://dummyimage.com/748x370/") Фото
+            td.order
+              a(href="") Заказать
+            td.dummy
+        
+    .tab#billboard-map
+    
+  center  
+    a.send-btn(href="request-form.html") Отправить заказ
+      
+  script.
+    billboards_json = {
+      "center": [47.25221300, 39.69359700],
+      "zoom": 10,
+      "items": [{
+        "id": 1,
+        "position": [47.25821300, 39.69359700],
+        "type": "yellow",
+        "address": "Какаято улица, 2",
+        "reserved": 12.06, //зарезервировано до 12.06
+        "price": 19500,
+        "photo": "http://dummyimage.com/748x370/",
+      },{
+        "id": 2,
+        "position": [47.25022400, 39.29359700],
+        "type": "green",
+        "address": "Соколова, 18",
+        "price": 19500,
+        "photo": "http://dummyimage.com/748x370/",
+      },{
+        "id": 3,
+        "position": [47.09222400, 39.69956700],
+        "type": "red",
+        "address": "Ещё какаято улица, 3",
+        "available": 86, //доступно через 86 дней
+        "price": 19500,
+        "photo": "http://dummyimage.com/748x370/",
+      }],
+    }

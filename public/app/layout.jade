@@ -1,0 +1,52 @@
+- var bodyClass = "";
+
+block vars
+
+doctype html
+html(class="no-js")
+  head
+    meta(charset='utf-8')
+    title My Webapp
+    meta(name='description' content='')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+
+    // build:css styles/vendor.css
+    // bower:css
+    link(rel='stylesheet', href='../bower_components/magnific-popup/dist/magnific-popup.css')
+    link(rel='stylesheet', href='../bower_components/animate.css/animate.css')
+    // endbower
+    // endbuild
+
+    // build:css styles/main.css
+    link(rel='stylesheet' href='styles/main.css')
+    // endbuild
+
+    // build:js scripts/vendor/modernizr.js
+    script(src='../bower_components/modernizr/modernizr.js')
+    // endbuild
+
+  body(class="#{bodyClass}")
+  
+    block header
+      include includes/header.jade
+      
+    block content
+    
+    .footer
+    
+    script(src='//api-maps.yandex.ru/2.1/?lang=ru_RU')
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/magnific-popup/dist/jquery.magnific-popup.js')
+    script(src='../bower_components/jquery-validation/dist/jquery.validate.js')
+    // endbower
+    // endbuild
+
+    // build:js scripts/main.js
+    script(src='scripts/main.js')
+    script(src='scripts/tabs.js')
+    script(src='scripts/billboards.js')
+    script(src='scripts/photo.js')
+    // endbuild

@@ -1,0 +1,50 @@
+extends layout
+
+block vars
+ - var bodyClass = "request-form";
+
+block header
+  include includes/header_middle.jade
+
+block content
+  .decals
+  form#request-form(action="." method="POST")
+    h1 Заявка на размещение
+    .wrapper
+      .selected-billboards
+        .row.title Выбраные щиты:
+        .row.list
+          .more
+            a(href="/billboards.html") Добавить ешё щит
+      .row
+        input(type="hidden" name="billboards")
+      .row.need-design
+        label
+          input(type="checkbox", checked="checked" name="need_design")
+          .label Разработать дизайн для макетов биллборда
+      .row
+      .row
+        label
+          .label Организация*:
+          input(name="org")
+      .row
+      .row
+        label
+          .label Телефон*:
+          input(name="phone" placeholder="+7")
+      .row
+      .row
+        label
+          .label Email:
+          input(name="email")
+      .row
+      .row.comment
+        label
+          .label Коментарий к заказу:
+          textarea(name="comment" placeholder="Например, укажите удобное время для звонка")
+      .row
+        center
+          button(type="submit") Оформить заказ
+    .final
+      .green Спасибо!
+      .text Ваша заявка<br> успешно отправлена.
