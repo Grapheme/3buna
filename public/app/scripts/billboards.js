@@ -216,18 +216,31 @@ $(function() {
     },
     submitHandler: function (form) {
       var ids = localstorageGet('billboards_ids');
-      $(form).find('input[name="billboards"]').val(JSON.stringify(ids));
-      
-      $.ajax({
-          type: $(form).attr('method'),
-          url: $(form).attr('action'),
-          data: $(form).serialize(),
-      })
-      .done(function (response) {
-        $('#request-form .wrapper').slideUp();
-        $('#request-form .final').slideDown();
-      });
+      //$(form).find('input[name="billboards"]').val(JSON.stringify(ids));
+      if (ids.length>0) {
+        $.ajax({
+            type: $(form).attr('method'),
+            url: $(form).attr('action'),
+            data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
+        })
+        .done(function (response) {
+          $('#request-form .wrapper').slideUp();
+          $('#request-form .final').slideDown();
+        }); 
+      } else {
+        $('#request-form .selected-billboards .title').css({
+          color:'red'  
+        });
+      }
       return false;
+    },
+    invalidHandler: function(event, validator) {
+      var ids = localstorageGet('billboards_ids');
+      if (ids.length<=0) {
+        $('#request-form .selected-billboards .title').css({
+          color:'red'  
+        });
+      }
     }
   });
   
