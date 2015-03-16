@@ -8,8 +8,13 @@ body {
   }
   &.billboards, &.request-form {
     background: #694952;
-    min-width: 1200px;
     position: relative;
+    .decals {
+      background: url('../images/decals-red.png') center center;
+    }
+  }
+  &.contacts {
+    background: #e1f0f5;
     .decals {
       background: url('../images/decals-red.png') center center;
     }

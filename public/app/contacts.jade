@@ -1,0 +1,35 @@
+extends layout
+
+block vars
+ - var bodyClass = "contacts";
+
+block header
+  include includes/header_middle.jade
+
+block content
+  .decals
+  h1 Контакты
+  .content
+    .row
+      .unit
+        h2 Адрес
+        p г. РОСТОВ-НА-ДОНУ, <br>УЛ. НАНСЕНА, 239, <br>ТЦ "Декорум", офис 301
+      .unit
+        h2 Телефоны
+        p.
+          <a href="tel:+78632944518">+7 (863) 294-45-18</a>,<br>
+          <a href="tel:+79185451183">+7 (918) 545-11-83</a>
+      .unit
+        h2 Почта
+        p
+          a(href="mailto:info@3buna.ru") info@3buna.ru
+      .clrfx
+    .map
+    h2 Обратная связь
+    form.contacts-form
+      .row
+        input(name="name" placeholder="Имя")
+        input(name="phone" placeholder="Телефон")
+      .row
+        textarea(name="message" placeholder="Текст сообщения")
+      button(type="submit") Отправить

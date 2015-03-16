@@ -1,6 +1,6 @@
 $(function() {
   ymaps.ready(function () {
-    var index_map = new ymaps.Map($('body.index .small-map')[0], {
+    var index_map = new ymaps.Map($('body.index .small-map, body.contacts .map')[0], {
           center: [47.24470432, 39.72322986],
           zoom: 18
     });

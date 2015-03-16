@@ -12,6 +12,11 @@
   clear: both;
 }
 
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 body {
   font-family: "Circe-Regular";
   min-width: 1200px;
@@ -112,6 +117,93 @@ body {
       .small-map {
         height: 278px;
         width: 100%;
+      }
+    }
+  }
+  &.contacts {
+    h1 {
+      text-align: center;
+      color: #eb5c53;
+      font-size: 56px;
+      font-family: 'Circe-ExtraBold';
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    .content {
+      width: 942px;
+      margin: 0 auto;
+      background: white;
+      padding-top: 40px;
+      margin-bottom: 34px;
+      .row {
+        .unit {
+          float: left;
+          width: 314px;
+          text-align: center;
+          padding: 0 30px;
+          box-sizing: border-box;
+          color: #384144;
+          margin-bottom: 20px;
+          p {
+            font-family: 'Circe-Bold';
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 30px;
+            text-transform: uppercase;
+            a[href^="mailto"] {
+              color: #eb5c53;
+            }
+          }
+        }
+      }
+      .map {
+        height: 485px;
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-family: 'Circe-Bold';
+        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 0.2em;
+        font-size: 28px;
+        text-align: center;
+      }
+      form.contacts-form {
+        width: 640px;
+        margin: 0 auto;
+        padding-bottom: 52px;
+        input, textarea {
+          text-transform: uppercase;
+          font-family: 'Circe-Bold';
+          letter-spacing: 0.2em;
+          border: 1px solid #e1f0f5;
+          border-radius: 2px;
+          padding: 17px 26px 12px 26px;
+        }
+        input {
+          width: 312px;
+          box-sizing: border-box;
+          &:first-child {
+            margin-right: 12px;
+          }
+        }
+        textarea {
+          width: 639px;
+          box-sizing: border-box;
+          margin: 12px 0;
+          display: block;
+        }
+        button {
+          background: none;
+          border: 1px solid #da4f44;
+          font-size: 18px;
+          font-weight: normal;
+          color: #da4f44;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          padding: 17px 26px;
+          padding-bottom: 14px;
+        }
       }
     }
   }
