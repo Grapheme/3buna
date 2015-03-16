@@ -2,7 +2,6 @@
 
 
 @section('style')
-    {{ HTML::style('css/redactor.css') }}
     @if (@trim($dic_settings['style']))
     <style>
         {{ $dic_settings['style'] }}
