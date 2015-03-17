@@ -47,14 +47,21 @@
       <div class="map"></div>
       <h2>Обратная связь</h2>
       <form class="contacts-form">
-        <div class="row">
-          <input name="name" placeholder="Имя">
-          <input name="phone" placeholder="Телефон">
+        <div class="wrapper">
+          <div class="row">
+            <input name="name" placeholder="Имя">
+            <input name="phone" placeholder="Телефон">
+          </div>
+          <div class="row">
+            <textarea name="message" placeholder="Текст сообщения"></textarea>
+          </div>
+          <button type="submit">Отправить</button>
+          <div class="notice">Все поля обязательны для заполнения.</div>
         </div>
-        <div class="row">
-          <textarea name="message" placeholder="Текст сообщения"></textarea>
+        <div class="final">
+          <div class="title">Спасибо!</div>
+          <div class="text">Ваше письмо<br> успешно отправлено</div>
         </div>
-        <button type="submit">Отправить</button>
       </form>
     </div>
     <footer>

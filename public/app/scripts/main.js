@@ -39,7 +39,6 @@ function localstorageGet(key, callback) {
       return false;
     }
   }
-  callback = callback || function(){};
 }
 
 function localstorageSet(key, value, callback) {

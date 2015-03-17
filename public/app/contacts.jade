@@ -27,9 +27,14 @@ block content
     .map
     h2 Обратная связь
     form.contacts-form
-      .row
-        input(name="name" placeholder="Имя")
-        input(name="phone" placeholder="Телефон")
-      .row
-        textarea(name="message" placeholder="Текст сообщения")
-      button(type="submit") Отправить
+      .wrapper
+        .row
+          input(name="name" placeholder="Имя")
+          input(name="phone" placeholder="Телефон")
+        .row
+          textarea(name="message" placeholder="Текст сообщения")
+        button(type="submit") Отправить
+        .notice Все поля обязательны для заполнения.
+      .final
+        .title Спасибо!
+        .text Ваше письмо<br> успешно отправлено

@@ -179,6 +179,9 @@ body {
           border: 1px solid #e1f0f5;
           border-radius: 2px;
           padding: 17px 26px 12px 26px;
+          &.error {
+            border-color: red;
+          }
         }
         input {
           width: 312px;
@@ -189,6 +192,7 @@ body {
         }
         textarea {
           width: 639px;
+          height: 200px;
           box-sizing: border-box;
           margin: 12px 0;
           display: block;
@@ -203,6 +207,42 @@ body {
           letter-spacing: 0.2em;
           padding: 17px 26px;
           padding-bottom: 14px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .notice {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 30px;
+        }
+        label.error {
+          display: none !important;
+        }
+      }
+      .final {
+        width: 640px;
+        height: 240px;
+        margin: 0 auto;
+        background: #99c45a;
+        text-align: center;
+        display: none;
+        .title {
+          font-family: 'Circe-Bold';
+          background: #99c45a;
+          font-size: 22px;
+          text-transform: uppercase;
+          display: inline-block;
+          color: white;
+          padding: 5px 10px;
+          line-height: 150%;
+          padding-top: 8px;
+          margin-top: 60px;
+          margin-bottom: 10px;
+        }
+        .text {
+          text-transform: uppercase;
+          color: white;
+          margin-bottom: 100px;
         }
       }
     }
