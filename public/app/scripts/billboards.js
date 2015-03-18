@@ -228,11 +228,13 @@ $(function() {
         $.ajax({
           type: $(form).attr('method'),
           url: $(form).attr('action'),
+          dataType: 'json',
           data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
         })
         .done(function (response) {
           console.log(response);
-          jsonResponse = JSON.parse(response);
+          //jsonResponse = JSON.parse(response);
+          jsonResponse = response;
           if (jsonResponse.status == true) {
             $('#request-form .wrapper').slideUp();
             $('#request-form .final').slideDown();
