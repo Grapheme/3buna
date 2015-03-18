@@ -23,7 +23,7 @@ $(function() {
       _mapMarkers_.forEach(function(element){
         element.marker.balloon.close();
       });
-      _mapMarkers_.container.fitToViewport();
+      _billboards_map_.container.fitToViewport();
       getIndex();
     }
   })
