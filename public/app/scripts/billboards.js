@@ -196,9 +196,11 @@ $(function() {
   }
   
   $(document).on('click', '#request-form .selected-billboards .unit .close', function(e){
-    var id = $(this).attr('data-id');
+    var _id = $(this).attr('data-id');
     var ids = localstorageGet('billboards_ids');
-    ids.splice(ids.indexOf(id), 1);
+    console.log(_id, ids);
+    ids.splice(ids.indexOf(_id), 1);
+    console.log(ids);
     var $_this = $(this);
     localstorageSet('billboards_ids', ids, function(){
       $_this.closest('.unit').fadeOut(300, function(){
