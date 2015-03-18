@@ -101,9 +101,9 @@ $(function() {
       });
     }
     if (ids.length == 0) {
-      $('body.billboards a.send').slideUp();
+      $('body.billboards a.send-btn').slideUp();
     } else {
-      $('body.billboards a.send').slideDown();
+      $('body.billboards a.send-btn').slideDown();
     }
   }
   if (typeof billboards_json !=="undefined"){
