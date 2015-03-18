@@ -68,6 +68,7 @@ $(function() {
           marker: placemark
         });
         billboard_map.geoObjects.add(placemark);
+        renderBtns();
       })
     });
   };
@@ -174,12 +175,18 @@ $(function() {
       var ids = localstorageGet('billboards_ids');
       var billboards_json = localstorageGet('billboards_json');
       if (ids && billboards_json && ids.length>0) {
+        var forDel = []
         ids.forEach(function(element, index){
           billboards_json.forEach(function(element2, index2){
             if (element == element2.id) {
               $('<div class="unit" data-id="'+element2.id+'">'+element2.address+'<a href="" class="close"></a></div>').prependTo('#request-form .selected-billboards .list');
+            } else {
+              forDel.push(element);
             };
           });
+        })
+        forDel.forEach(function(e, i){
+          ids.splice(ids.indexOf(e), 1);
         })
       } else {
         $('#request-form .selected-billboards .title').text('Вы не выбрали ни одного щита.');
@@ -189,9 +196,11 @@ $(function() {
   }
   
   $(document).on('click', '#request-form .selected-billboards .unit .close', function(e){
-    var id = $(this).attr('data-id');
+    var _id = $(this).closest('.unit').attr('data-id');
     var ids = localstorageGet('billboards_ids');
-    ids.splice(ids.indexOf(id), 1);
+    console.log(_id, ids);
+    ids.splice(ids.indexOf(_id), 1);
+    console.log(ids);
     var $_this = $(this);
     localstorageSet('billboards_ids', ids, function(){
       $_this.closest('.unit').fadeOut(300, function(){
@@ -219,14 +228,28 @@ $(function() {
       //$(form).find('input[name="billboards"]').val(JSON.stringify(ids));
       if (ids.length>0) {
         $.ajax({
-            type: $(form).attr('method'),
-            url: $(form).attr('action'),
-            data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
+          type: $(form).attr('method'),
+          url: $(form).attr('action'),
+          dataType: 'json',
+          data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
         })
         .done(function (response) {
-          $('#request-form .wrapper').slideUp();
-          $('#request-form .final').slideDown();
-        }); 
+          console.log(response);
+          //jsonResponse = JSON.parse(response);
+          jsonResponse = response;
+          if (jsonResponse.status == true) {
+            $('#request-form .wrapper').slideUp();
+            $('#request-form .final').slideDown();
+            ids = [];
+            localstorageSet('billboards_ids', ids);
+          } else {
+            alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
+          }
+        }).fail(function(response) {
+          console.log(response);
+          alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
+        });
+        $('#request-form button').prop('disabled', true);
       } else {
         $('#request-form .selected-billboards .title').css({
           color:'red'  
