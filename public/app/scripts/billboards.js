@@ -58,7 +58,7 @@ $(function() {
           iconLayout: 'default#image',
           iconImageHref: colorIcons[value.type],
           iconImageSize: [53, 65],
-          //iconImageOffset: [-3, -3]
+          iconImageOffset: [-26, -65]
         });
         placemark.events.add('balloonopen', function(e){
           console.log('balloonopen!');
@@ -78,6 +78,8 @@ $(function() {
   
   function renderBtns() {
     var ids = localstorageGet('billboards_ids');
+    console.log(ids);
+    console.log(ids.length);
     $('.billboards #list-view tr').removeClass('ordered');
     _mapMarkers_.forEach(function(element2, index2){
       var _type = element2.marker.properties.get('type');

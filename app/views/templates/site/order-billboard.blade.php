@@ -32,7 +32,7 @@
             <div class="row need-design">
                 <label>
                     <input type="checkbox" name="need_design" value="1" checked="checked">
-                    <div class="label">Разработать дизайн для макетов биллборда</div>
+                    <div class="label">Разработать макет рекламного щита</div>
                 </label>
             </div>
             <div class="row"></div>
