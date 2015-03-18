@@ -226,14 +226,21 @@ $(function() {
       //$(form).find('input[name="billboards"]').val(JSON.stringify(ids));
       if (ids.length>0) {
         $.ajax({
-            type: $(form).attr('method'),
-            url: $(form).attr('action'),
-            data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
+          type: $(form).attr('method'),
+          url: $(form).attr('action'),
+          data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
         })
         .done(function (response) {
-          $('#request-form .wrapper').slideUp();
-          $('#request-form .final').slideDown();
-        }); 
+          console.log(response);
+          jsonResponse = JSON.parse(response);
+          if (jsonResponse.status == true) {
+            $('#request-form .wrapper').slideUp();
+            $('#request-form .final').slideDown();
+          } else {
+            alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.')
+          }
+        });
+        $('#request-form button').prop('disabled', true);
       } else {
         $('#request-form .selected-billboards .title').css({
           color:'red'  
