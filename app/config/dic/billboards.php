@@ -97,7 +97,7 @@ return array(
                 },
             ),
 
-            #/*
+            /*
             'need_manual_check' => array(
                 'no_label' => true,
                 'title' => 'Статус был изменен, требуется ручная проверка',
@@ -105,7 +105,7 @@ return array(
                 'label_class' => 'normal_checkbox',
             ),
             #*/
-            /*
+            #/*
             'need_manual_check' => array(
                 'type' => 'custom',
                 'content' => Form::hidden('need_manual_check', 0),
