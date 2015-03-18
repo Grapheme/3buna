@@ -6,7 +6,9 @@ $(function() {
   
   function showAndHide(index) {
     $tabs.slideUp();
-    $tabs.eq(index).slideDown();
+    $tabs.eq(index).slideDown(300, function(){
+      _billboards_map_.container.fitToViewport();  
+    });
   }
   
   function getIndex() {

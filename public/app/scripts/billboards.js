@@ -1,4 +1,5 @@
 var _mapMarkers_ = [];
+var _billboards_map_;
 
 $(function() {
   var colorIcons = {
@@ -27,6 +28,8 @@ $(function() {
           <a href="" data-id="{{properties.id}}" class="order {{properties.ordered}}">{{properties.btn_type}}</a>\
         </div>',
       {});
+      
+      _billboards_map_ = billboard_map;
       
       billboard_map.behaviors.disable('scrollZoom');
       

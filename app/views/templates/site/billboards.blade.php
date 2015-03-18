@@ -72,8 +72,8 @@ if (isset($billboards) && count($billboards)) {
         конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
     </div>
     <div class="tabs-btn">
-        <a href="" class="list-view">Списком</a>
-        <a href="" class="map-view active">На карте</a>
+        <a href="" class="list-view active">Списком</a>
+        <a href="" class="map-view">На карте</a>
         <span class="selected"><span class="count"></span> на сумму <span class="numbers"></span></span>
     </div>
     <div class="tabs">
