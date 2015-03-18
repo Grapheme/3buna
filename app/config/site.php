@@ -46,4 +46,6 @@ return array(
         'blocked' => 'Занят',
     ],
 
+    #'domain' => 'http://3buna.dev.grapheme.ru/'
+
 );

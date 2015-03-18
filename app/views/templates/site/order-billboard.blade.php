@@ -17,13 +17,13 @@
 @section('content')
 
     <div class="decals"></div>
-    <form id="request-form" action="." method="POST">
+    <form id="request-form" action="{{ URL::route('app.order-billboard') }}" method="POST">
         <h1>Заявка на размещение</h1>
         <div class="wrapper">
             <div class="selected-billboards">
                 <div class="row title">Выбраные щиты:</div>
                 <div class="row list">
-                    <div class="more"><a href="/billboards/">Добавить ешё щит</a></div>
+                    <div class="more"><a href="{{ URL::route('page', 'billboards') }}">Добавить ешё щит</a></div>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +31,7 @@
             </div>
             <div class="row need-design">
                 <label>
-                    <input type="checkbox" checked="checked" name="need_design">
+                    <input type="checkbox" value="1" checked="checked" name="need_design">
                     <div class="label">Разработать макет рекламного щита</div>
                 </label>
             </div>

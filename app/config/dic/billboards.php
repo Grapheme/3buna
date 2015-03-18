@@ -96,12 +96,21 @@ return array(
                     return $value ? date('d.m.Y', strtotime($value)) : date('d.m.Y');
                 },
             ),
+
+            /*
             'need_manual_check' => array(
                 'no_label' => true,
                 'title' => 'Статус был изменен, требуется ручная проверка',
                 'type' => 'checkbox',
                 'label_class' => 'normal_checkbox',
             ),
+            #*/
+            #/*
+            'need_manual_check' => array(
+                'type' => 'custom',
+                'content' => Form::hidden('need_manual_check', 0),
+            ),
+            #*/
 
 
         );
