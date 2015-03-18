@@ -74,7 +74,7 @@ class ApplicationController extends BaseController {
             }
 
             $message->from($from_email, $from_name);
-            $message->subject('Сообщение обратной связи - ' . @$data['name']);
+            $message->subject('Трибуна: сообщение обратной связи - ' . @$data['name']);
             $message->to($email);
 
             if (isset($ccs) && is_array($ccs) && count($ccs))
@@ -142,7 +142,7 @@ class ApplicationController extends BaseController {
             }
 
             $message->from($from_email, $from_name);
-            $message->subject('Заявка на размещение - ' . @$data['org']);
+            $message->subject('Трибуна: заявка на размещение - ' . @$data['org']);
             $message->to($email);
 
             if (isset($ccs) && is_array($ccs) && count($ccs))
