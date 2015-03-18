@@ -239,8 +239,10 @@ $(function() {
             $('#request-form .wrapper').slideUp();
             $('#request-form .final').slideDown();
           } else {
-            alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.')
+            alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
           }
+        }).fail(function() {
+          alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
         });
         $('#request-form button').prop('disabled', true);
       } else {
