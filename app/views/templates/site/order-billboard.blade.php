@@ -31,7 +31,7 @@
             </div>
             <div class="row need-design">
                 <label>
-                    <input type="checkbox" value="1" checked="checked" name="need_design">
+                    <input type="checkbox" name="need_design" value="1" checked="checked">
                     <div class="label">Разработать макет рекламного щита</div>
                 </label>
             </div>
