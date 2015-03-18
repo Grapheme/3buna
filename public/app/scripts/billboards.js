@@ -238,10 +238,13 @@ $(function() {
           if (jsonResponse.status == true) {
             $('#request-form .wrapper').slideUp();
             $('#request-form .final').slideDown();
+            ids = [];
+            localstorageSet('billboards_ids', ids);
           } else {
             alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
           }
-        }).fail(function() {
+        }).fail(function(response) {
+          console.log(response);
           alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
         });
         $('#request-form button').prop('disabled', true);
