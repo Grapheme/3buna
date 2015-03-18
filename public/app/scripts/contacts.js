@@ -3,12 +3,12 @@ $(function() {
     rules: {
       name: 'required',
       phone: 'required',
-      message: 'required',
+      content: 'required',
     },
     messages: {
       name: 'Обязательное поле',
       phone: 'Обязательное поле',
-      message: 'Обязательное поле'
+      content: 'Обязательное поле'
     },
     submitHandler: function (form) {
         $.ajax({
