@@ -37,7 +37,8 @@ if (isset($billboards) && count($billboards)) {
             "id" => $billboard->id,
             "position" => [$billboard->lat, $billboard->lng],
             "type" => $billboard_style,
-            "address" => $billboard->address,
+            //"address" => $billboard->address,
+            "address" => $billboard->name,
             "price" => (int)$billboard->price,
             "photo" => $image,
         ];
@@ -107,7 +108,8 @@ if (isset($billboards) && count($billboards)) {
                                 <tr data-id='{{ $billboard->id }}'>
                                     <td class="dummy"></td>
                                     <td class="type {{ $billboard_style }}"></td>
-                                    <td class="address">{{ $billboard->address }}</td>
+                                    {{--<td class="address">{{ $billboard->address }}</td>--}}
+                                    <td class="address">{{ $billboard->name }}</td>
                                     <td class="price">
                                         @if ($billboard->price)
                                             @if ($billboard_style == 'green')
