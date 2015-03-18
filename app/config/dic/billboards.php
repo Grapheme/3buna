@@ -32,10 +32,26 @@ return array(
             ),
             'map' => array(
                 'type' => 'custom',
-                'content' => View::make('system.views.map_google_block', ['element' => $dicval])->render(),
+                'content' => View::make('system.views.map_google_block', [
+                    'element' => $dicval,
+
+                    #'map_id' => 'map',
+                    #'map_style' => 'height:300px;',
+                ])->render(),
                 'scripts' => View::make('system.views.map_google_script', [
                     'element' => $dicval,
+
+                    #'map_id' => 'map',
+                    #'map_type' => 'google.maps.MapTypeId.ROADMAP',
+                    #'field_address' => 'address',
+                    #'field_lat' => 'lat',
+                    #'field_lng' => 'lng',
+                    #'keyup_timer' => 1200,
+
                     'geo_prefix' => 'Россия, Ростов-на-Дону, ',
+                    'default_lat' => '47.25221300',
+                    'default_lng' => '39.69359700',
+                    'default_zoom' => '11',
                 ])->render(),
             ),
             'lat' => array(

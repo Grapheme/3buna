@@ -57,7 +57,8 @@
     @endif
 
     <?
-    $scripts = array();
+    global $dicval_edit_scripts;
+    $dicval_edit_scripts = array();
     ?>
 
     <!-- Fields -->
@@ -114,7 +115,7 @@
                         if (isset($field['after_save_js']))
                             $onsuccess_js[] = $field['after_save_js'];
                         if (isset($field['scripts']))
-                            $scripts[] = $field['scripts'];
+                            $dicval_edit_scripts[] = $field['scripts'];
                         ?>
                         <section>
                             @if (!@$field['no_label'] && isset($field['title']))
@@ -137,8 +138,8 @@
                 {{-- @if (count($locales) > 1) --}}
                 <?
                 $fields_i18n = array();
-                if (@is_callable($dic_settings['fields_i18n']))
-                    $fields_i18n = $dic_settings['fields_i18n']();
+                if (isset($dic_settings['fields_i18n']) && is_callable($dic_settings['fields_i18n']))
+                    $fields_i18n = $dic_settings['fields_i18n']($element);
                 ?>
                 @if (count($fields_i18n))
                     <?
@@ -398,8 +399,8 @@
     </script>
     @endif
 
-    @if (isset($scripts) && is_array($scripts) && count($scripts))
-        {{ implode("\n", $scripts) }}
+    @if (isset($dicval_edit_scripts) && is_array($dicval_edit_scripts) && count($dicval_edit_scripts))
+        {{ implode("\n", $dicval_edit_scripts) }}
     @endif
 
 @stop

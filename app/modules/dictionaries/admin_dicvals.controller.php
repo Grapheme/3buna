@@ -549,7 +549,7 @@ class AdminDicvalsController extends BaseController {
              */
             $element_fields_i18n = Config::get('dic/' . $dic->slug . '.fields_i18n');
             if (isset($element_fields_i18n) && is_callable($element_fields_i18n))
-                $element_fields_i18n = $element_fields_i18n();
+                $element_fields_i18n = $element_fields_i18n($element);
             #Helper::d($element_fields_i18n);
             #Helper::dd($fields_i18n);
 
