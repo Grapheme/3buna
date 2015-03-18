@@ -38,7 +38,7 @@ if (isset($billboards) && count($billboards)) {
             "position" => [$billboard->lat, $billboard->lng],
             "type" => $billboard_style,
             "address" => $billboard->address,
-            "price" => $billboard->price,
+            "price" => (int)$billboard->price,
             "photo" => $image,
         ];
         if ($billboard_style == 'yellow')
@@ -109,13 +109,15 @@ if (isset($billboards) && count($billboards)) {
                                     <td class="type {{ $billboard_style }}"></td>
                                     <td class="address">{{ $billboard->address }}</td>
                                     <td class="price">
-                                        @if ($billboard_style == 'green')
-                                            <span class="numbers">{{ $billboard->price }} </span>
-                                            <strong>рублей </strong><span>в месяц</span>
-                                        @elseif ($billboard_style == 'yellow')
-                                            <span>Зарезервирован до <strong>{{ $carbon->format('d.m') }}, </strong></span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
-                                        @elseif ($billboard_style == 'red')
-                                            <span>Доступно через <strong>{{ $carbon->diffInDays(); }} дней </strong></span><span>за </span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
+                                        @if ($billboard->price)
+                                            @if ($billboard_style == 'green')
+                                                <span class="numbers">{{ $billboard->price }} </span>
+                                                <strong>рублей </strong><span>в месяц</span>
+                                            @elseif ($billboard_style == 'yellow')
+                                                <span>Зарезервирован до <strong>{{ $carbon->format('d.m') }}, </strong></span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
+                                            @elseif ($billboard_style == 'red')
+                                                <span>Доступно через <strong>{{ $carbon->diffInDays(); }} дней </strong></span><span>за </span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
+                                            @endif
                                         @endif
                                     </td>
                                     <td class="photo">
@@ -135,35 +137,12 @@ if (isset($billboards) && count($billboards)) {
         @endif
         <div id="billboard-map" class="tab"></div>
     </div>
-    <center><a href="request-form.html" class="send-btn">Отправить заказ</a></center>
+    <center><a href="{{ URL::route('page', 'order-billboard') }}" class="send-btn">Отправить заказ</a></center>
     <script>
         billboards_json = {
             "center": [47.25221300, 39.69359700],
-            "zoom": 10,
-            "items": [{
-                "id": 1,
-                "position": [47.25821300, 39.69359700],
-                "type": "yellow",
-                "address": "Какаято улица, 2",
-                "reserved": 12.06, //зарезервировано до 12.06
-                "price": 19500,
-                "photo": "http://dummyimage.com/748x370/",
-            }, {
-                "id": 2,
-                "position": [47.25022400, 39.29359700],
-                "type": "green",
-                "address": "Соколова, 18",
-                "price": 19500,
-                "photo": "http://dummyimage.com/748x370/",
-            }, {
-                "id": 3,
-                "position": [47.09222400, 39.69956700],
-                "type": "red",
-                "address": "Ещё какаято улица, 3",
-                "available": 86, //доступно через 86 дней
-                "price": 19500,
-                "photo": "http://dummyimage.com/748x370/",
-            }],
+            "zoom": 12,
+            "items": {{ json_encode($billboards_for_json) }}
         }
     </script>
 
