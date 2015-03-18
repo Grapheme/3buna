@@ -81,7 +81,7 @@
             <div class="contacts-block">
                 Мы находимся по адресу:<br>
                 <strong>г. Ростов-на-дону, ул. нансена, 239,</strong><br>
-                телефон: <strong>(863) 244-25-25</strong>
+                телефон: <strong>(863) 218-52-22</strong>
             </div>
             <div class="small-map"></div>
         </div>
