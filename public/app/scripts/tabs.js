@@ -5,7 +5,7 @@ $(function() {
   getIndex();
   
   function showAndHide(index) {
-    $tabs.slideUp();
+    $tabs.slideUp(300);
     $tabs.eq(index).slideDown(300, function(){
       _billboards_map_.container.fitToViewport();  
     });
