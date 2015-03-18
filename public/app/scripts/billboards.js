@@ -78,6 +78,8 @@ $(function() {
   
   function renderBtns() {
     var ids = localstorageGet('billboards_ids');
+    console.log(ids);
+    console.log(ids.length);
     $('.billboards #list-view tr').removeClass('ordered');
     _mapMarkers_.forEach(function(element2, index2){
       var _type = element2.marker.properties.get('type');
@@ -99,11 +101,11 @@ $(function() {
           };
         });
       });
-    }
-    if (ids.length == 0) {
-      $('body.billboards a.send-btn').slideUp();
-    } else {
-      $('body.billboards a.send-btn').slideDown();
+      if (ids.length == 0) {
+        $('body.billboards a.send-btn').slideUp();
+      } else {
+        $('body.billboards a.send-btn').slideDown();
+      }
     }
   }
   if (typeof billboards_json !=="undefined"){
