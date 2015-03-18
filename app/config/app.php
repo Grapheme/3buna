@@ -10,19 +10,19 @@ return array(
 	'use_scripts_local' => FALSE,
 	
 	'default_page_title' => 'CMS DEV',
-	'template' => 'default',
+	'template' => 'site',
     'welcome_page_tpl' => 'templates.site.index', #'guests.welcome',
 
 
 	'manifest' => storage_path('meta'),
 
 	'debug' => FALSE,
-	'url' => 'http://test.grapheme.ru/sarykum/public',
+	'url' => '',
 	'timezone' => 'UTC',
 
     'locales' => array(
         'ru' => 'Русский',
-        'en' => 'English',
+        #'en' => 'English',
     ),
 	'locale' => 'ru',
 

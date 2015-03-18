@@ -601,6 +601,12 @@ HTML;
             case 'hidden':
                 $return = Form::hidden($name, $value, $others_array);
                 break;
+            case 'textline':
+                if (!$value)
+                    $return = Form::text($name, NULL, $others_array);
+                else
+                    $return = isset($array['view_text']) ? $array['view_text'] : $value;
+                break;
             case 'custom':
                 $return = @$array['content'];
                 break;

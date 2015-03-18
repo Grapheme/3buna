@@ -3,7 +3,7 @@
  * MENU_PLACEMENTS: main_menu=Основное меню|additional_menu=Дополнительное меню|footer_menu=Меню в подвале
  */
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html class="no-js">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -12,7 +12,7 @@
     	@include(Helper::layout('head'))
 	    @yield('style')
     </head>
-    <body>
+    <body class="@yield('page_class')">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

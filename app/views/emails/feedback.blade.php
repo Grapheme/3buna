@@ -6,7 +6,7 @@
 <body>
 	<div>
 		<p>
-            Сообщение: &lt;{{ $email }}&gt;
+            Сообщение: {{ $name }} @if (isset($phone)) {{ $phone }} @endif
             <hr/>
 			{{ Helper::nl2br($content) }}
             <hr/>

@@ -2,7 +2,7 @@
 
 return array(
 
-    'theme_path' => 'dist',
+    'theme_path' => URL::to('dist'),
 
     'paginate_limit' => 30,
 
@@ -37,4 +37,13 @@ return array(
         'default_description' => '',
         'default_keywords'    => '',
     ],
+
+
+
+    'billboard_statuses' => [
+        'free' => 'Свободен',
+        'reserved' => 'В резерве',
+        'blocked' => 'Занят',
+    ],
+
 );
