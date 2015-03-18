@@ -7,7 +7,9 @@ $(function() {
   function showAndHide(index) {
     $tabs.slideUp(300);
     $tabs.eq(index).slideDown(300, function(){
-      _billboards_map_.container.fitToViewport();  
+      if (_billboards_map_) {
+        _billboards_map_.container.fitToViewport();  
+      }
     });
   }
   
