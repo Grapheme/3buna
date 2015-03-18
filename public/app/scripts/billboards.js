@@ -100,6 +100,11 @@ $(function() {
         });
       });
     }
+    if (ids.length == 0) {
+      $('body.billboards a.send').slideUp();
+    } else {
+      $('body.billboards a.send').slideDown();
+    }
   }
   if (typeof billboards_json !=="undefined"){
   

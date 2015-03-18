@@ -579,9 +579,9 @@ a.send-btn {
           background: #4a353b;
           border: 1px solid white;
           width: 290px;
-          line-height: 100%;
+          //line-height: 100%;
           vertical-align: middle;
-          padding-top: 2px;
+          padding-top: 3px;
           padding-bottom: 3px;
           &.error {
             border-color: red;
@@ -600,6 +600,7 @@ a.send-btn {
         textarea {
           height: 164px;
           width: 440px;
+          padding-top: 0;
         }
       }
       &.title, &.need-design {

@@ -23,7 +23,7 @@
             <div class="selected-billboards">
                 <div class="row title">Выбраные щиты:</div>
                 <div class="row list">
-                    <div class="more"><a href="/billboards.html">Добавить ешё щит</a></div>
+                    <div class="more"><a href="/billboards/">Добавить ешё щит</a></div>
                 </div>
             </div>
             <div class="row">
@@ -32,7 +32,7 @@
             <div class="row need-design">
                 <label>
                     <input type="checkbox" checked="checked" name="need_design">
-                    <div class="label">Разработать дизайн для макетов биллборда</div>
+                    <div class="label">Разработать макет рекламного щита</div>
                 </label>
             </div>
             <div class="row"></div>
