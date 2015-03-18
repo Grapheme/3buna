@@ -68,6 +68,7 @@ $(function() {
           marker: placemark
         });
         billboard_map.geoObjects.add(placemark);
+        renderBtns();
       })
     });
   };
@@ -174,12 +175,18 @@ $(function() {
       var ids = localstorageGet('billboards_ids');
       var billboards_json = localstorageGet('billboards_json');
       if (ids && billboards_json && ids.length>0) {
+        var forDel = []
         ids.forEach(function(element, index){
           billboards_json.forEach(function(element2, index2){
             if (element == element2.id) {
               $('<div class="unit" data-id="'+element2.id+'">'+element2.address+'<a href="" class="close"></a></div>').prependTo('#request-form .selected-billboards .list');
+            } else {
+              forDel.push(element);
             };
           });
+        })
+        forDel.forEach(function(e, i){
+          ids.splice(ids.indexOf(e), 1);
         })
       } else {
         $('#request-form .selected-billboards .title').text('Вы не выбрали ни одного щита.');
