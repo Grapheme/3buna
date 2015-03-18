@@ -196,7 +196,7 @@ $(function() {
   }
   
   $(document).on('click', '#request-form .selected-billboards .unit .close', function(e){
-    var _id = $(this).attr('data-id');
+    var _id = $(this).closes('.unit').attr('data-id');
     var ids = localstorageGet('billboards_ids');
     console.log(_id, ids);
     ids.splice(ids.indexOf(_id), 1);
