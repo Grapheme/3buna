@@ -28,4 +28,18 @@ $(function() {
     initPopup($(this)).magnificPopup('open');
   })
   
+  $('.content-wrapper .photos').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true,  
+      tPrev: 'Предыдущая (Стрелка влево)',
+      tNext: 'Следующая (Стрелка вправо)',
+      tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+    },
+    image: {
+      titleSrc: 'title'
+    },
+  });
+  
 });

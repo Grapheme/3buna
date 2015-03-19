@@ -81,6 +81,7 @@ header {
           margin: 0 -2px;
           margin-top: 23px;
           margin-left: -5px;
+          z-index: 20;
         }
         a {
           font-family: 'Circe-Bold';
@@ -92,9 +93,28 @@ header {
           padding-bottom: 14px;
           display: inline-block;
           text-decoration: none;
+          position: relative;
           &:hover {
             background: #ededed;
           }
+          /*&.active {
+            z-index: 10;
+            &:after {
+              display: block;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 57px;
+              background-image: url('../images/bg-menu_active.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover 100%;
+              content: '';
+              //content: url('../images/bg-menu_active.svg');
+              z-index: -1;
+            }
+          }*/
         }
       }
     }
