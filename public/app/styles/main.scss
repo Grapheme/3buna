@@ -17,6 +17,26 @@ a[href^="tel"] {
   text-decoration: inherit;
 }
 
+.btn {
+  font-family: "Circe-Bold";
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  padding: 0 36px;
+  padding-bottom: 18px;
+  padding-top: 22px;
+  border-radius: 2px;
+  text-decoration: none;
+  z-index: 10;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
 body {
   font-family: "Circe-Regular";
   min-width: 1200px;
@@ -120,7 +140,7 @@ body {
       }
     }
   }
-  &.billboards_design{
+  &.billboards_design, &.web{
     .btn.send {
       border-color: white;
     }
@@ -129,6 +149,15 @@ body {
       font-family: 'Circe-Regular';
       font-size: 17px;
       
+    }
+    .content-wrapper {
+      border-color: #774b52;
+      .photos {
+        border-color: #774b52;
+        .unit {
+          border-color: #774b52;
+        }
+      }
     }
   }
   &.contacts {
@@ -734,6 +763,10 @@ a.send-btn {
     font-size: 17px;
     margin: 0 auto;
     text-align: center;
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+    }
   }
   .photos {
     margin-top: 48px;

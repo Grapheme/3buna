@@ -37,9 +37,18 @@ $(function() {
       tNext: 'Следующая (Стрелка вправо)',
       tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
     },
+    callbacks: {
+      beforeOpen: function() {
+         this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+         this.st.mainClass = 'mfp-move-from-top';
+      }
+    },
+
     image: {
       titleSrc: 'title'
     },
   });
+  
+  
   
 });

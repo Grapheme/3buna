@@ -11,22 +11,7 @@ header {
   .btn.send {
     position: absolute;
     right: 50px;
-    font-family: "Circe-Bold";
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: white;
     border: 1px solid #99c45a;
-    padding: 0 36px;
-    padding-bottom: 18px;
-    padding-top: 22px;
-    border-radius: 2px;
-    text-decoration: none;
-    z-index: 10;
-    &:hover {
-      opacity: 0.8;
-    }
   }
   .wrapper {
     position: relative;

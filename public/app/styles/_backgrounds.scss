@@ -27,7 +27,13 @@ body {
   &.billboards_design {
     background: #67c08a;
     .decals {
-      
+      background: url('../images/decals-white2.png') center center no-repeat;
+    }
+  }
+  &.web {
+    background: #fb5f54;
+    .decals {
+      background: url('../images/decals-white.png') center center no-repeat;
     }
   }
 }
