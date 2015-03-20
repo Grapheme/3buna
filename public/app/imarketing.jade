@@ -1,0 +1,40 @@
+extends layout
+
+block vars
+ - var bodyClass = "imarketing";
+
+block btn
+  a.btn.send(href="request-form.html") Заказать разработку
+  
+block title
+  img.ico(src="/images/ico-imarketing.png")
+  h1 Интернет - маркетинг
+
+block header
+  include includes/header.jade
+
+block content
+  .decals
+  .teaser.
+    Мы занимаемся маркетингом и выходим на новый современный уровень. Маркетинг
+    через интернет - мощнейший инструмент продвижения вашего бизнеса.
+  .content-wrapper
+    h2 Стратегия в 3 шага
+    .text
+      p.
+        Сайт — один из ключевых каналов общения с потребителем. Важно при его
+        создании учесть потребности целевой аудитории и специфику вашего
+        бизнеса. Технические составляющие должны быть идеально отлажены.
+      .trielage
+        .unit.red
+          .number 1
+          .label Правильная постановка задачи
+        .unit.blue
+          .number 2
+          .label Определение целевой аудитории
+        .unit.white
+          .number 3
+          .label Анализ<br> рынка<br> закупок
+        .info
+          Правильно спроектированная стратегия - залог успешного <br>и долговечного бизнеса.
+      a.btn(href="") Заказать разработку

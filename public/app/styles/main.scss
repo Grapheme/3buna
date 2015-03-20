@@ -140,7 +140,7 @@ body {
       }
     }
   }
-  &.billboards_design, &.web{
+  &.billboards_design, &.web, &.imarketing{
     .btn.send {
       border-color: white;
     }
@@ -158,6 +158,11 @@ body {
           border-color: #774b52;
         }
       }
+    }
+  }
+  &.imarketing {
+    .content-wrapper {
+      border: none;
     }
   }
   &.contacts {
@@ -825,6 +830,54 @@ a.send-btn {
           }
         }
       }
+    }
+  }
+  .trielage {
+    width: 966px;
+    margin-left: -107px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    .unit {
+      width: 322px;
+      float: left;
+      text-align: left;
+      color: white;
+      padding-left: 60px;
+      padding-top: 40px;
+      padding-right: 75px;
+      padding-bottom: 55px;
+      box-sizing: border-box;
+      font-family: 'Circe-Bold';
+      font-size: 18px;
+      line-height: 29px;
+      letter-spacing: 0.2em;
+      font-weight: normal;
+      text-transform: uppercase;
+      .number {
+        font-size: 24px;
+        margin-bottom: 32px;
+      }
+      &.red {
+        background: #fb4e41;
+      }
+      &.blue {
+        background: #a2c1ca;
+      }
+      &.white {
+        background: #ffffff;
+        color: black;
+      }
+    }
+    .info {
+      clear: both;
+      border: 1px solid white;
+      border-top: none;
+      font-family: 'Circe-Bold';
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding-top: 26px;
+      padding-bottom: 30px;
     }
   }
 }

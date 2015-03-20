@@ -36,4 +36,10 @@ body {
       background: url('../images/decals-white.png') center center no-repeat;
     }
   }
+  &.imarketing {
+    background: #3c4346;
+    .decals {
+      background: url('../images/decals-white2.png') center center no-repeat;
+    }
+  }
 }

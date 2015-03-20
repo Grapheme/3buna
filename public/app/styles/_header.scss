@@ -82,7 +82,7 @@ header {
           &:hover {
             background: #ededed;
           }
-          /*&.active {
+          &.active {
             z-index: 10;
             &:after {
               display: block;
@@ -90,7 +90,7 @@ header {
               left: 0;
               top: 0;
               width: 100%;
-              height: 57px;
+              height: 58px;
               background-image: url('../images/bg-menu_active.svg');
               background-repeat: no-repeat;
               background-position: center;
@@ -99,7 +99,7 @@ header {
               //content: url('../images/bg-menu_active.svg');
               z-index: -1;
             }
-          }*/
+          }
         }
       }
     }
