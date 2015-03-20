@@ -79,8 +79,9 @@ if (isset($billboards) && count($billboards)) {
 
     <div class="decals"></div>
     <div class="teaser">
-        Рекламное агентство «Трибуна» владеет собственной сетью рекламных
-        конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
+
+        {{ $page->block('description') }}
+
     </div>
     <div class="tabs-btn">
         <a href="" class="list-view active">Списком</a>

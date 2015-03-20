@@ -28,7 +28,7 @@ return array(
     'galleries_cache_dir'        => public_path('uploads/galleries/cache'),
     'galleries_cache_public_dir' => '/uploads/galleries/cache',
     'galleries_cache_allowed_sizes' => [
-        '200x200'
+        '216x216'
     ],
 
 

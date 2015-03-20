@@ -12,6 +12,7 @@ class GalleriesController extends BaseController {
         $class = __CLASS__;
 
         if (NULL !== ($galleries_cache_public_dir = Config::get('site.galleries_cache_public_dir'))) {
+            #echo $galleries_cache_public_dir . '/{image_id}_{w}x{h}{method?}.png';
             Route::get(
                 $galleries_cache_public_dir . '/{image_id}_{w}x{h}{method?}.png',
                 array(
@@ -85,6 +86,15 @@ class GalleriesController extends BaseController {
     }
 
     /**
+     * Ссылка на изображение, подвергнутое кропу или ресайзу
+     *
+     * URL::route('image.resize', [$photo->id, 200, 200])
+     * URL::route('image.resize', [$photo->id, 200, 200, 'r'])
+     *
+     * См. также /app/config/site.php
+     * - galleries_cache_public_dir
+     * - galleries_cache_allowed_sizes
+     *
      * @param string $method Method of resize - crop or resize
      */
     public function getImageResize($image_id, $w, $h, $method = 'crop'){
@@ -204,7 +214,7 @@ class GalleriesController extends BaseController {
             /**
              * Кроп по центру по заданным размерам
              */
-            $img->crop($w, $h, ($nnw-$w)/2, ($nnh-$h)/2);
+            $img->crop($w, $h, ceil(($nnw-$w)/2), ceil(($nnh-$h)/2));
         }
 
         /**

@@ -22,18 +22,21 @@
         <div class="row">
             <div class="unit">
                 <h2>Адрес</h2>
-                <p>г. РОСТОВ-НА-ДОНУ, <br>УЛ. НАНСЕНА, 239, <br>ТЦ "Декорум", офис 312</p>
+                <p>
+                    {{ $page->block('address') }}
+                </p>
             </div>
             <div class="unit">
                 <h2>Телефоны</h2>
                 <p>
-                    <a href="tel:+78632185270">+7 (863) 218-52-70</a>,<br>
-                    <a href="tel:+78632185222">218-52-22</a>
+                    {{ $page->block('phones') }}
                 </p>
             </div>
             <div class="unit">
                 <h2>Почта</h2>
-                <p><a href="mailto:info@3buna.ru">info@3buna.ru</a></p>
+                <p>
+                    {{ $page->block('email') }}
+                </p>
             </div>
             <div class="clrfx"></div>
         </div>
