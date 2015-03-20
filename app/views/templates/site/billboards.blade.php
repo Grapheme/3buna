@@ -57,7 +57,18 @@ if (isset($billboards) && count($billboards)) {
 ?>
 
 
-@section('page_class')billboards @stop
+@section('page_class') billboards @stop
+
+
+@section('header_class') billboards @stop
+
+
+@section('header_content')
+    <a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>
+    <div class="wrapper"><img src="{{ Config::get('site.theme_path') }}/images/ico-billboards.png" class="ico">
+        <h1>Размещение на щитах</h1>
+    </div>
+@stop
 
 
 @section('style')
