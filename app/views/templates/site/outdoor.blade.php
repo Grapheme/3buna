@@ -21,7 +21,7 @@ $outdoors = DicLib::loadGallery($outdoors, 'gallery');
 
 
 @section('header_content')
-    <a href="{{ URL::route('page', 'order') }}" class="btn send">Заказать изготовление</a>
+    <a href="{{ URL::route('page', ['order', 'type' => 'outdoor']) }}" class="btn send">Заказать изготовление</a>
     <div class="wrapper"><img src="{{ Config::get('site.theme_path') }}/images/ico-billboards_design.png" class="ico">
         <h1>Изготовление <br>наружной рекламы</h1>
     </div>

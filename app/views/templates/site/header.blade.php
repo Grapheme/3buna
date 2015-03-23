@@ -8,6 +8,9 @@
 
         {{ Menu::placement('main_menu') }}
 
-    </div><a href="{{ URL::route('mainpage') }}" class="logo"><img src="{{ Config::get('site.theme_path') }}/images/logo.png"></a>
+    </div>
+    @section('header_logo')
+        <a href="{{ URL::route('mainpage') }}" class="logo"><img src="{{ Config::get('site.theme_path') }}/images/logo.png"></a>
+    @show
     @section('header_content')@show
 </header>

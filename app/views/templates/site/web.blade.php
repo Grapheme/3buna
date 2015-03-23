@@ -21,7 +21,7 @@ $webs = DicLib::loadGallery($webs, 'gallery');
 
 
 @section('header_content')
-    <a href="{{ URL::route('page', 'order') }}" class="btn send">Заказать сайт</a>
+    <a href="{{ URL::route('page', ['order', 'type' => 'web']) }}" class="btn send">Заказать сайт</a>
     <div class="wrapper"><img src="{{ Config::get('site.theme_path') }}/images/ico-computer.png" class="ico">
         <h1>Разработка веб-сайтов</h1>
     </div>
