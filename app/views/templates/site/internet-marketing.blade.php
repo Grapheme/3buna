@@ -14,7 +14,7 @@
 
 
 @section('header_content')
-    <a href="{{ URL::route('page', ['order', 'type' => 'marketing']) }}" class="btn send">Заказать разработку</a>
+    <a href="{{ URL::route('page', ['order', 'type' => 'marketing']) }}" class="btn send">Заказать</a>
     <div class="wrapper"><img src="{{ Config::get('site.theme_path') }}/images/ico-imarketing.png" class="ico">
         <h1>Интернет - маркетинг</h1>
     </div>
@@ -38,7 +38,7 @@
 
             {{ $page->block('content') }}
 
-            <a href="{{ URL::route('page', ['order', 'type' => 'marketing']) }}" class="btn">Заказать разработку</a>
+            <a href="{{ URL::route('page', ['order', 'type' => 'marketing']) }}" class="btn">Заказать</a>
 
         </div>
     </div>

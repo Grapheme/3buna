@@ -38,21 +38,21 @@
                 <div class="title">{{ $page->block('outdoor', 'name') }}</div>
                 <div class="description">{{ $page->block('outdoor') }}</div>
             </div>
-            <a href="{{ URL::route('page', 'outdoor') }}" class="more">Читать далее</a>
+            <a href="{{ URL::route('page', 'outdoor') }}" class="more">Примеры работ</a>
         </section>
         <section class="imarketing">
             <div class="holder">
                 <div class="title">{{ $page->block('internet-marketing', 'name') }}</div>
                 <div class="description">{{ $page->block('internet-marketing') }}</div>
             </div>
-            <a href="{{ URL::route('page', 'internet-marketing') }}" class="more">Читать далее</a>
+            <a href="{{ URL::route('page', 'internet-marketing') }}" class="more">Подробнее</a>
         </section>
         <section class="web-sites">
             <div class="holder">
                 <div class="title">{{ $page->block('web', 'name') }}</div>
                 <div class="description">{{ $page->block('web') }}</div>
             </div>
-            <a href="{{ URL::route('page', 'web') }}" class="more">Смотреть работы</a>
+            <a href="{{ URL::route('page', 'web') }}" class="more">Портфолио</a>
         </section>
         <div class="clrfx"></div>
     </div>
