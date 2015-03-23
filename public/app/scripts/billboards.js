@@ -259,7 +259,30 @@ $(function() {
         $('#request-form .selected-billboards .title').css({
           color:'red'  
         });
-      }
+      };
+      if ($('.selected-billboards').size()==0) {
+        $.ajax({
+          type: $(form).attr('method'),
+          url: $(form).attr('action'),
+          dataType: 'json',
+          data: $(form).serialize(),
+        })
+        .done(function (response) {
+          console.log(response);
+          //jsonResponse = JSON.parse(response);
+          jsonResponse = response;
+          if (jsonResponse.status == true) {
+            $('#request-form .wrapper').slideUp();
+            $('#request-form .final').slideDown();
+          } else {
+            alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
+          }
+        }).fail(function(response) {
+          console.log(response);
+          alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
+        });
+        $('#request-form button').prop('disabled', true);
+      };
       return false;
     },
     invalidHandler: function(event, validator) {

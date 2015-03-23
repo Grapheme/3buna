@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>My Webapp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body class="request-form">
+    <header class="middle">
+      <div class="holder">
+        <ul class="main-menu">
+          <li><a href="billboards.html" class="active">Размещение на щитах</a></li>
+          <li><a href="" class="active">Изготовление наружно рекламы</a></li>
+          <li><a href="" class="active">Интернет-маркетинг</a></li>
+          <li><a href="" class="active">Разработка сайтов</a></li>
+          <li><a href="" class="active">О компании</a></li>
+          <li><a href="" class="active">Контакты</a></li>
+        </ul>
+      </div><a href="/" class="logo"><img src="/images/logo.png"></a>
+    </header>
+    <div class="decals"></div>
+    <form id="request-form" action="." method="POST">
+      <h1>Заявка на изготовление <!--//(маректинг, разработку)--></h1>
+      <div class="wrapper">
+        <div class="row">
+          <label>
+            <div class="label">Организация*:</div>
+            <input name="org">
+          </label>
+        </div>
+        <div class="row"></div>
+        <div class="row">
+          <label>
+            <div class="label">Телефон*:</div>
+            <input name="phone" placeholder="+7">
+          </label>
+        </div>
+        <div class="row"></div>
+        <div class="row">
+          <label>
+            <div class="label">Email:</div>
+            <input name="email">
+          </label>
+        </div>
+        <div class="row"></div>
+        <div class="row comment">
+          <label>
+            <div class="label">Коментарий к заказу:</div>
+            <textarea name="comment" placeholder="Например, укажите удобное время для звонка"></textarea>
+          </label>
+        </div>
+        <div class="row">
+          <center>
+            <button type="submit">Оформить заказ</button>
+          </center>
+        </div>
+      </div>
+      <div class="final">
+        <div class="green">Спасибо!</div>
+        <div class="text">Ваша заявка<br> успешно отправлена.</div>
+      </div>
+    </form>
+    <footer>
+      <div class="left">
+        <div class="company">&copy; 2015 Рекламное агентство «Трибуна»</div><a href="mailto:info@3buna.ru" class="mail">info@3buna.ru</a>
+      </div>
+      <div class="right">
+        <ul class="footer-menu">
+          <li><a href="billboards.html">Размещение на щитах</a></li>
+          <li><a href="">Изготовление наружно рекламы</a></li>
+          <li><a href="">Интернет-маркетинг</a></li>
+          <li><a href="">Разработка сайтов</a></li>
+          <li><a href="">О компании</a></li>
+          <li><a href="">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="clrfx"></div>
+    </footer>
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="scripts/vendor.js"></script>
+    <script>var tribuna_theme_path_ = '' //Без слеша в конце;</script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
