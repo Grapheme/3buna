@@ -42,4 +42,10 @@ body {
       background: url('../images/decals-white2.png') center center no-repeat;
     }
   }
+  &.common {
+    background: #d3dece;
+    .decals {
+      background: url('../images/decals-white.png') center center no-repeat;
+    }
+  }
 }

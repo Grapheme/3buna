@@ -292,6 +292,67 @@ body {
       }
     }
   }
+  &.common {
+    color: #52343e;
+    h1 {
+      font-family: "Circe-Bold";
+      font-size: 28px;
+      font-weight: normal;
+      color: #52343e;
+      letter-spacing: 0.2em;
+      display: inline-block;
+      position: relative;
+      &:before, &:after {
+        background: url('../images/bullet-brown-romb-big.png');
+        width: 21px;
+        height: 10px;
+        display: block;
+        content: '';
+        position: absolute;
+        top: 26px;
+      }
+      &:before {
+        left: -34px;
+      }
+      &:after {
+        right: -28px;
+      }
+    }
+    h2 {
+      font-size: 18px;
+      text-align: left;
+      color: #52343e;
+    }
+    .content-wrapper {
+      padding: 0 48px;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 40px;
+      margin-bottom: 60px;
+      ul {
+        list-style-image: url('../images/bullet-brown-romb-small.png');
+        padding-left: 0px;
+        margin-bottom: 30px;
+        li {
+          margin: 15px 0;
+        }
+      }
+      p {
+        font-family: 'Circe-Light';
+      }
+      blockquote {
+        font-family: 'Circe-Light';
+        background: rgba(255,255,255,0.3);
+        margin: 30px 0;
+        margin-left: -48px;
+        margin-right: -48px;
+        padding-left: 48px;
+        padding-right: 48px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
 }
 
 .teaser {
