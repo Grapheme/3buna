@@ -4,6 +4,9 @@
  */
 ?>
 @extends(Helper::layout())
+<?
+$page_title = 'Страница не найдена';
+?>
 
 
 @section('page_class')forbidden @stop
