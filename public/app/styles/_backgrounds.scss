@@ -48,4 +48,7 @@ body {
       background: url('../images/decals-white.png') center center no-repeat;
     }
   }
+  &.forbidden {
+    background: #694952;
+  }
 }
