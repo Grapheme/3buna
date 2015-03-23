@@ -16,7 +16,7 @@
 
 @section('content')
     <?
-    $title = 'Заявка на размещение';
+    $title = 'Заявка на изготовление';
     if (Input::get('type') == 'marketing')
         $title = 'Заявка на маркетинг';
     if (Input::get('type') == 'web')
