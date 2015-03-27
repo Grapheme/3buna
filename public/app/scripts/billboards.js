@@ -68,6 +68,7 @@ $(function() {
         });
         _mapMarkers_.push({
           id: value.id,
+          position: value.position,
           marker: placemark
         });
         billboard_map.geoObjects.add(placemark);
@@ -293,6 +294,22 @@ $(function() {
         });
       }
     }
+  });
+  
+  $('body.billboards #list-view .address a').click(function(e){
+    e.preventDefault();
+    var _id = $(this).closest('tr').attr('data-id');
+    $('.tabs-btn .map-view').click();
+    setTimeout(function(){
+      _mapMarkers_.forEach(function(element){
+        if (element.id == _id) {
+          _billboards_map_.setZoom(18);
+          _billboards_map_.setCenter(element.position);
+          console.log(element);
+          element.marker.balloon.open();
+        }
+      });
+    }, 500);
   });
   
 });

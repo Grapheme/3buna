@@ -64,7 +64,7 @@ if (isset($billboards) && count($billboards)) {
 
 
 @section('header_content')
-    <a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>
+    <!--<a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>-->
     <div class="wrapper"><img src="{{ Config::get('site.theme_path') }}/images/ico-billboards.png" class="ico">
         <h1>Размещение на щитах</h1>
     </div>
@@ -87,6 +87,7 @@ if (isset($billboards) && count($billboards)) {
         <a href="" class="list-view active">Списком</a>
         <a href="" class="map-view">На карте</a>
         <span class="selected"><span class="count"></span> на сумму <span class="numbers"></span></span>
+        <a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>
     </div>
     <div class="tabs">
         @if (count($areas))
@@ -121,16 +122,16 @@ if (isset($billboards) && count($billboards)) {
                                     <td class="dummy"></td>
                                     <td class="type {{ $billboard_style }}"></td>
                                     {{--<td class="address">{{ $billboard->address }}</td>--}}
-                                    <td class="address">{{ $billboard->name }}</td>
+                                    <td class="address"><a href="">{{ $billboard->name }}</a></td>
                                     <td class="price">
                                         @if ($billboard->price)
                                             @if ($billboard_style == 'green')
                                                 <span class="numbers">{{ $billboard->price }} </span>
-                                                <strong>рублей </strong><span>в месяц</span>
+                                                <span>руб. </span>
                                             @elseif ($billboard_style == 'yellow')
-                                                <span>Зарезервирован до <strong>{{ $carbon->format('d.m') }}, </strong></span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
+                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><span>Зарезервирован до <span>{{ $carbon->format('d.m') }}. </span></span>
                                             @elseif ($billboard_style == 'red')
-                                                <span>Доступно через <strong>{{ $carbon->diffInDays(); }} дней </strong></span><span>за </span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
+                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><span>Доступно через <span>{{ $carbon->diffInDays(); }} дней. </span></span>
                                             @endif
                                         @endif
                                     </td>
@@ -151,7 +152,12 @@ if (isset($billboards) && count($billboards)) {
         @endif
         <div id="billboard-map" class="tab"></div>
     </div>
-    <center><a href="{{ URL::route('page', 'order-billboard') }}" class="send-btn">Отправить заказ</a></center>
+    <div class="tabs-btn">
+        <span class="selected" style="display: none;"><span class="count">Выбрано 0 щитов</span> на сумму <span class="numbers">0 рублей.</span></span>
+        <br><br>
+        <a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>
+        <br><br>
+    </div>
     <script>
         billboards_json = {
             "center": [47.25221300, 39.69359700],
