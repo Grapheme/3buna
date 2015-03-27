@@ -84,8 +84,8 @@ if (isset($billboards) && count($billboards)) {
 
     </div>
     <div class="tabs-btn">
-        <a href="" class="list-view active">Списком</a>
-        <a href="" class="map-view">На карте</a>
+        <a href="" class="list-view active tab-btn">Списком</a>
+        <a href="" class="map-view tab-btn">На карте</a>
         <span class="selected"><span class="count"></span> на сумму <span class="numbers"></span></span>
         <a href="{{ URL::route('page', 'order-billboard') }}" class="btn send">Отправить заказ</a>
     </div>

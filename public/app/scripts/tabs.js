@@ -1,5 +1,5 @@
 $(function() {
-  var $btns = $('.tabs-btn>a'),
+  var $btns = $('.tabs-btn>a.tab-btn'),
       $tabs = $('.tabs>.tab');
   
   getIndex();
