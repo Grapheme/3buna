@@ -296,7 +296,7 @@ $(function() {
     }
   });
   
-  $('body.billboards #list-view .address a').click(function(e){
+  $('body.billboards #list-view td.photo a.address').click(function(e){
     e.preventDefault();
     var _id = $(this).closest('tr').attr('data-id');
     $('.tabs-btn .map-view').click();

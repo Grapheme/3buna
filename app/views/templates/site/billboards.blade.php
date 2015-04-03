@@ -122,23 +122,24 @@ if (isset($billboards) && count($billboards)) {
                                     <td class="dummy"></td>
                                     <td class="type {{ $billboard_style }}"></td>
                                     {{--<td class="address">{{ $billboard->address }}</td>--}}
-                                    <td class="address"><a href="">{{ $billboard->name }}</a></td>
+                                    <td class="address">{{ $billboard->name }}</td>
                                     <td class="price">
                                         @if ($billboard->price)
                                             @if ($billboard_style == 'green')
                                                 <span class="numbers">{{ $billboard->price }} </span>
                                                 <span>руб. </span>
                                             @elseif ($billboard_style == 'yellow')
-                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><span>Зарезервирован до <span>{{ $carbon->format('d.m') }}. </span></span>
+                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><br><span>Зарезервирован до <span>{{ $carbon->format('d.m') }}. </span></span>
                                             @elseif ($billboard_style == 'red')
-                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><span>Доступно через <span>{{ $carbon->diffInDays(); }} дней. </span></span>
+                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><br><span>Доступно через <span>{{ $carbon->diffInDays(); }} дней. </span></span>
                                             @endif
                                         @endif
                                     </td>
                                     <td class="photo">
                                         @if ($image)
-                                            <a href="{{ $image }}">Фото</a>
+                                            <a class="photo" href="{{ $image }}">Фото</a><br>
                                         @endif
+                                        <a href="" class="address">На карте</a>
                                     </td>
                                     <td class="order"><a href="#">Заказать</a></td>
                                     <td class="dummy"></td>
