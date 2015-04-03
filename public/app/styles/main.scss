@@ -630,19 +630,22 @@ a.send-btn {
 
 .billboard-mark {
   .mark {
-    width: 53px;
+    width: 33px;
     height: 65px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
     &.yellow {
-      background: url('../images/ico-marker_yellow.png');
+      background-image: url('../images/ico-marker_yellow.png');
     }
     &.red {
-      background: url('../images/ico-marker_red.png');
+      background-image: url('../images/ico-marker_red.png');
     }
     &.green {
-      background: url('../images/ico-marker_green.png');
+      background-image: url('../images/ico-marker_green.png');
     }
   }
   .address {
@@ -650,11 +653,11 @@ a.send-btn {
     vertical-align: middle;
     font-family: 'Circe-Bold';
     color: #694952;
-    font-size: 18px;
+    font-size: 15px;
   }
   .info {
     display: block;
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Circe-Regular';
     color: #694952;
     line-height: 24px;
@@ -665,7 +668,7 @@ a.send-btn {
     }
   }
   a {
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     color: #694952;
   }
