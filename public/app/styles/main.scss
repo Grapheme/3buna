@@ -306,6 +306,8 @@ body {
       letter-spacing: 0.2em;
       display: inline-block;
       position: relative;
+      width: 570px;
+      line-height: 140%;
       &:before, &:after {
         background: url('../images/bullet-brown-romb-big.png');
         width: 21px;
