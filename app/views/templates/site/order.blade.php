@@ -22,6 +22,12 @@
     if (Input::get('type') == 'web')
         $title = 'Заявка на разработку';
     ?>
+    
+    <?
+    $btn_title = 'Оформить заказ';
+    if (Input::get('type') == 'marketing' || Input::get('type') == 'web')
+        $btn_title = 'Отправить заказ';
+    ?>
     <div class="decals"></div>
     <form id="request-form" action="{{ URL::route('app.order') }}" method="POST">
         <h1>{{ $title }}</h1>
@@ -55,7 +61,7 @@
             </div>
             <div class="row">
                 <center>
-                    <button type="submit">Оформить заказ</button>
+                    <button type="submit">{{ $btn_title }}</button>
                 </center>
             </div>
         </div>

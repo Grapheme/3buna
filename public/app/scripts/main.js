@@ -1,5 +1,5 @@
 /* jshint devel:true */
-console.log('\'Allo \'Allo!');
+//console.log('\'Allo \'Allo!');
 
 function arrayObjectIndexOf(myArray, searchTerm, property) {
     for(var i = 0, len = myArray.length; i < len; i++) {
@@ -33,9 +33,12 @@ function jsTils(num, expressions) {
 
 function localstorageGet(key, callback) {
   if (Modernizr.localstorage) {
-    if (localStorage.getItem(key)) {
-      return JSON.parse(localStorage.getItem(key));
+    //return lscache.get(key);
+    if (lscache.get(key)) {
+      //return JSON.parse(lscache.get(key));
+      return lscache.get(key);
     } else {
+      localStorage.clear();
       return false;
     }
   }
@@ -43,7 +46,9 @@ function localstorageGet(key, callback) {
 
 function localstorageSet(key, value, callback) {
   if (Modernizr.localstorage) {
-    localStorage.setItem(key, JSON.stringify(value));
+    lscache.set(key, JSON.stringify(value), 24*60);
+    //lscache.set(key, value, 24*60);
+    //localStorage.setItem(key, JSON.stringify(value));
   }
   callback = callback || function(){};
   callback();
