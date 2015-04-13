@@ -149,6 +149,7 @@ if (isset($billboards) && count($billboards)) {
                                                 Второй резерв
                                             @elseif ($billboard_style == 'red')
                                                 Оставить заявку
+                                            @endif
                                         </a>
                                     </td>
                                     <td class="dummy"></td>
