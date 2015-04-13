@@ -2,10 +2,30 @@
   var $infoBox = $('.tabs-btn .selected');
   
   function localstorageGet(key, callback) {
+    alert('get!');
     if (Modernizr.localstorage) {
+      alert('1')
       if (localStorage.getItem(key)) {
-        return JSON.parse(localStorage.getItem(key));
+        alert('2')
+        if (localStorage.getItem('expire')) {
+          alert('3')
+          var expire = localStorage.getItem('expire');
+          if (expire<new Date()) {
+            alert('4')
+            localStorage.clear();
+          } else {
+            alert('!!');
+            return JSON.parse(localStorage.getItem(key));            
+          }
+        } else {
+          alert('5');
+          localStorage.clear();
+          return false;
+        }
+        alert('6');
+        return false;
       } else {
+        alert('7');
         return false;
       }
       
@@ -15,6 +35,9 @@
   
   function localstorageSet(key, value, callback) {
     if (Modernizr.localstorage) {
+      var oneday = new Date();
+      oneday.setHours(d1.getHours() + 24);
+      localStorage.setItem('expire', oneday);
       return localStorage.setItem(key, JSON.stringify(value));
     }
     callback = callback || function(){};

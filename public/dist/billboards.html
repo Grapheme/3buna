@@ -21,7 +21,7 @@
           <li><a href="" class="active">О компании</a></li>
           <li><a href="" class="active">Контакты</a></li>
         </ul>
-      </div><a href="/" class="logo"><img src="/images/logo.png"></a><a href="request-form.html" class="btn send">Отправить заказ</a>
+      </div><a href="/" class="logo"><img src="/images/logo.png"></a>
       <div class="wrapper"><img src="/images/ico-billboards.png" class="ico">
         <h1>Размещение на щитах</h1>
       </div>
@@ -31,7 +31,7 @@
       Рекламное агентство «Трибуна» владеет собственной сетью рекламных
       конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
     </div>
-    <div class="tabs-btn"><a href="" class="list-view">Списком</a><a href="" class="map-view active">На карте</a><span class="selected"><span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span></span></div>
+    <div class="tabs-btn"><a href="" class="list-view tab-btn">Списком</a><a href="" class="map-view tab-btn active">На карте</a><span class="selected"><span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span></span><a href="request-form.html" class="btn send">Отправить заказ</a></div>
     <div class="tabs">
       <div id="list-view" class="tab">
         <section>
@@ -44,8 +44,8 @@
               <td class="type green"></td>
               <td class="address">Буденовский, 139</td>
               <td class="price"><span class="numbers">19500 </span><strong>рублей </strong><span>в месяц</span></td>
-              <td class="photo"><a href="http://dummyimage.com/748x370/">Фото</a></td>
-              <td class="order"><a href="">Заказать</a></td>
+              <td class="photo"><a href="http://dummyimage.com/748x370/" class="photo">Фото<br></a><a href="" class="address">На карте</a></td>
+              <td class="order"><a href="" class="type green">Заказать</a></td>
               <td class="dummy"></td>
             </tr>
             <tr data-id='2'>
@@ -54,7 +54,7 @@
               <td class="address">Буденовский, 139</td>
               <td class="price"><span>Зарезервирован до <strong>12.06, </strong></span><span class="numbers">19500 </span><strong>руб.</strong></td>
               <td class="photo"><a href="http://dummyimage.com/748x370/">Фото</a></td>
-              <td class="order"><a href="">Заказать</a></td>
+              <td class="order"><a href="" class="type yellow">Оставить заявку</a></td>
               <td class="dummy"></td>
             </tr>
             <tr data-id='3'>
@@ -63,7 +63,7 @@
               <td class="address">Буденовский, 139</td>
               <td class="price"><span>доступно через <strong>86 дней </strong></span><span>за </span><span class="numbers">19500 </span><strong>руб.</strong></td>
               <td class="photo"><a href="http://dummyimage.com/748x370/">Фото</a></td>
-              <td class="order"><a href="">Заказать</a></td>
+              <td class="order"><a href="" class="type red">Второй резерв</a></td>
               <td class="dummy"></td>
             </tr>
             <tr data-id='4'>
@@ -85,7 +85,7 @@
             <tr data-id='5'>
               <td class="dummy"></td>
               <td class="type green"></td>
-              <td class="address">Буденовский, 139</td>
+              <td class="address"><a href="">Буденовский, 139</a></td>
               <td class="price"><span class="numbers">19500 </span><strong>рублей </strong><span>в месяц</span></td>
               <td class="photo"><a href="http://dummyimage.com/748x370/">Фото</a></td>
               <td class="order"><a href="">Заказать</a></td>
@@ -123,10 +123,10 @@
       </div>
       <div id="billboard-map" class="tab"></div>
     </div>
-    <center> <a href="request-form.html" class="send-btn">Отправить заказ</a></center>
+    <div class="tabs-btn"><span class="selected"><span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span></span><br><br><a href="request-form.html" class="btn send">Отправить заказ</a><br><br></div>
     <script>
       billboards_json = {
-        "center": [47.25221300, 39.69359700],
+        "center": [0.25221300, 0.69359700],
         "zoom": 10,
         "items": [{
           "id": 1,

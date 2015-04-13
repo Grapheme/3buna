@@ -4,7 +4,6 @@ block vars
  - var bodyClass = "billboards";
 
 block btn
-  a.btn.send(href="request-form.html") Отправить заказ
   
 block title
   img.ico(src="/images/ico-billboards.png")
@@ -16,10 +15,10 @@ block content
     Рекламное агентство «Трибуна» владеет собственной сетью рекламных
     конструкций 6х3 в Ростове-на-Дону и специализируется на наружной рекламе.
   .tabs-btn
-    a.list-view(href="") Списком
-    a.map-view.active(href="") На карте
+    a.list-view.tab-btn(href="") Списком
+    a.map-view.tab-btn.active(href="") На карте
     span.selected <span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span>
-      
+    a.btn.send(href="request-form.html") Отправить заказ
   .tabs
     .tab#list-view
       section
@@ -29,15 +28,17 @@ block content
           tr(data-id=1)
             td.dummy
             td.type.green
-            td.address Буденовский, 139
+            td.address
+              Буденовский, 139
             td.price
               span.numbers 19500 
               strong рублей 
               span в месяц
             td.photo
-              a(href="http://dummyimage.com/748x370/") Фото
+              a.photo(href="http://dummyimage.com/748x370/") Фото<br>
+              a.address(href="") На карте
             td.order
-              a(href="") Заказать
+              a(href="").type.green Заказать
             td.dummy
           tr(data-id=2)
             td.dummy
@@ -51,7 +52,7 @@ block content
             td.photo
               a(href="http://dummyimage.com/748x370/") Фото
             td.order
-              a(href="") Заказать
+              a(href="").type.yellow Оставить заявку
             td.dummy
           tr(data-id=3)
             td.dummy
@@ -66,7 +67,7 @@ block content
             td.photo
               a(href="http://dummyimage.com/748x370/") Фото
             td.order
-              a(href="") Заказать
+              a(href="").type.red Второй резерв
             td.dummy
           tr(data-id=4)
             td.dummy
@@ -90,7 +91,8 @@ block content
           tr(data-id=5)
             td.dummy
             td.type.green
-            td.address Буденовский, 139
+            td.address
+              a(href="")Буденовский, 139
             td.price
               span.numbers 19500 
               strong рублей 
@@ -146,13 +148,18 @@ block content
             td.dummy
         
     .tab#billboard-map
-    
-  center  
-    a.send-btn(href="request-form.html") Отправить заказ
+  
+  .tabs-btn
+    span.selected <span class="count">Выбран 1 щит</span> на сумму <span class="numbers">18 400 рублей</span>
+    br
+    br
+    a.btn.send(href="request-form.html") Отправить заказ
+    br
+    br
       
   script.
     billboards_json = {
-      "center": [47.25221300, 39.69359700],
+      "center": [0.25221300, 0.69359700],
       "zoom": 10,
       "items": [{
         "id": 1,

@@ -64,10 +64,11 @@ $(function() {
           iconImageOffset: [-26, -65]
         });
         placemark.events.add('balloonopen', function(e){
-          console.log('balloonopen!');
+          //console.log('balloonopen!');
         });
         _mapMarkers_.push({
           id: value.id,
+          position: value.position,
           marker: placemark
         });
         billboard_map.geoObjects.add(placemark);
@@ -81,8 +82,8 @@ $(function() {
   
   function renderBtns() {
     var ids = localstorageGet('billboards_ids');
-    console.log(ids);
-    console.log(ids.length);
+    //console.log(ids);
+    //console.log(ids.length);
     $('.billboards #list-view tr').removeClass('ordered');
     _mapMarkers_.forEach(function(element2, index2){
       var _type = element2.marker.properties.get('type');
@@ -203,9 +204,9 @@ $(function() {
   $(document).on('click', '#request-form .selected-billboards .unit .close', function(e){
     var _id = $(this).closest('.unit').attr('data-id');
     var ids = localstorageGet('billboards_ids');
-    console.log(_id, ids);
+    //console.log(_id, ids);
     ids.splice(ids.indexOf(_id), 1);
-    console.log(ids);
+    //console.log(ids);
     var $_this = $(this);
     localstorageSet('billboards_ids', ids, function(){
       $_this.closest('.unit').fadeOut(300, function(){
@@ -239,7 +240,7 @@ $(function() {
           data: $(form).serialize()+ "&" + $.param({"billboards":ids}),
         })
         .done(function (response) {
-          console.log(response);
+          //console.log(response);
           //jsonResponse = JSON.parse(response);
           jsonResponse = response;
           if (jsonResponse.status == true) {
@@ -251,7 +252,7 @@ $(function() {
             alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
           }
         }).fail(function(response) {
-          console.log(response);
+          //console.log(response);
           alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
         });
         $('#request-form button').prop('disabled', true);
@@ -268,7 +269,7 @@ $(function() {
           data: $(form).serialize(),
         })
         .done(function (response) {
-          console.log(response);
+          //console.log(response);
           //jsonResponse = JSON.parse(response);
           jsonResponse = response;
           if (jsonResponse.status == true) {
@@ -278,7 +279,7 @@ $(function() {
             alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
           }
         }).fail(function(response) {
-          console.log(response);
+          //console.log(response);
           alert('Произошёл сбой. Пожалуйста попробуйте ещё раз.');
         });
         $('#request-form button').prop('disabled', true);
@@ -293,6 +294,22 @@ $(function() {
         });
       }
     }
+  });
+  
+  $('body.billboards #list-view td.photo a.address').click(function(e){
+    e.preventDefault();
+    var _id = $(this).closest('tr').attr('data-id');
+    $('.tabs-btn .map-view').click();
+    setTimeout(function(){
+      _mapMarkers_.forEach(function(element){
+        if (element.id == _id) {
+          _billboards_map_.setZoom(18);
+          _billboards_map_.setCenter(element.position);
+          //console.log(element);
+          element.marker.balloon.open();
+        }
+      });
+    }, 500);
   });
   
 });

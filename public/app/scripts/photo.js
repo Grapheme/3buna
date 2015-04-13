@@ -22,7 +22,7 @@ $(function() {
     return _popup
   }
   
-  initPopup($('#list-view td.photo a'));
+  initPopup($('#list-view td.photo a.photo'));
   $(document).on('click', '.billboard-mark .photo', function(e){
     e.preventDefault();
     initPopup($(this)).magnificPopup('open');
