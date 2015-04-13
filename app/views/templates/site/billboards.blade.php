@@ -131,11 +131,10 @@ if (isset($billboards) && count($billboards)) {
                                             @elseif ($billboard_style == 'yellow')
                                                 <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><br><span>Зарезервирован до <span>{{ $carbon->format('d.m') }}. </span></span>
                                             @elseif ($billboard_style == 'red')
-                                                <span>Доступен с <strong>{{ $carbon->format('d.m') }}, </strong></span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
                                                 @if (0)
                                                    <span>Доступно через <strong>{{ $carbon->diffInDays(); }} дней </strong></span><span>за </span><span class="numbers">{{ $billboard->price }} </span><strong>руб.</strong>
                                                 @endif
-                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><br><span>Доступно через <span>{{ $carbon->diffInDays(); }} дней. </span></span>
+                                                <span class="numbers">{{ $billboard->price }} </span><span>руб. </span><br><span>Доступен с <strong>{{ $carbon->format('d.m') }}</strong>.</span></span>
                                             @endif
                                         @endif
                                     </td>
