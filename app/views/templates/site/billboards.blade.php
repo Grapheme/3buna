@@ -141,7 +141,16 @@ if (isset($billboards) && count($billboards)) {
                                         @endif
                                         <a href="" class="address">На карте</a>
                                     </td>
-                                    <td class="order"><a href="#">Заказать</a></td>
+                                    <td class="order">
+                                        <a href="#" class="type {{ $billboard_style }}">
+                                            @if ($billboard_style == 'green')
+                                                Заказать
+                                            @elseif ($billboard_style == 'yellow')
+                                                Второй резерв
+                                            @elseif ($billboard_style == 'red')
+                                                Оставить заявку
+                                        </a>
+                                    </td>
                                     <td class="dummy"></td>
                                 </tr>
                             @endforeach

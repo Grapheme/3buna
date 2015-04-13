@@ -592,7 +592,7 @@ a.send-btn {
               padding-left: 15px;
             }
             &.price {
-              width: 320px;
+              width: 260px;
               .numbers {
                 //font-family: 'Circe-Bold';
               }
@@ -607,6 +607,7 @@ a.send-btn {
               }
             }
             &.order {
+              text-align: right;
               a {
                 display: inline-block;
                 border: 1px solid #83c07e;
@@ -620,6 +621,12 @@ a.send-btn {
                 text-decoration: none;
                 &:hover {
                   opacity: 0.8;
+                }
+                &.type.yellow {
+                  border-color: #db8617;
+                }
+                &.type.red {
+                  border-color: #cf4e45;
                 }
               }
             }
