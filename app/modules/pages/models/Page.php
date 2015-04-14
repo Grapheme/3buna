@@ -7,6 +7,7 @@ class Page extends BaseModel {
     protected $table = 'pages';
 
     protected $orderBy = 'order ASC, created_at DESC';
+    public static $cache_key = 'app.pages';
 
     public static $rules = array(
 	    'name' => 'required',
@@ -17,12 +18,13 @@ class Page extends BaseModel {
         'version_of',
         'name',
         'slug',
+        'sysname',
         'template',
         'type_id',
         'publication',
         'start_page',
-        'in_menu',
         'order',
+        'settings',
     );
 
 
@@ -66,6 +68,7 @@ class Page extends BaseModel {
      *
      * @return $this
      */
+    /*
     public function blocksBySlug() {
         #$return = $this;
         if (@count($this->blocks)) {
@@ -77,6 +80,7 @@ class Page extends BaseModel {
         }
         return $this;
     }
+    */
 
     public function block($slug = false, $field = 'content', $variables = array(), $force_compile = true) {
 
@@ -185,4 +189,132 @@ class Page extends BaseModel {
         return $this;
     }
 
+
+    /**
+     * Предзагрузка всех страниц и кеширование
+     */
+    public static function preload() {
+
+        $cache_key = self::$cache_key;
+        $cache_pages_limit = Config::get('pages.preload_pages_limit');
+
+        if ($cache_pages_limit === NULL) {
+            Config::set('pages.not_cached', TRUE);
+            return;
+        }
+
+        if (Cache::has($cache_key) && !Input::get('drop_pages_cache')) {
+
+            ## From cache
+            $pages = Cache::get($cache_key);
+
+        } elseif ($cache_pages_limit === 0 || ($cache_pages_limit > 0 && Page::count() <= $cache_pages_limit)) {
+
+            #echo "LOAD PAGES FROM DB!";
+
+            ## From DB
+            $pages = (new Page())->where('publication', 1)->where('version_of', NULL)->with(['metas', 'blocks.metas', 'seos', 'blocks.meta', 'meta', 'seo'])->get();
+
+            if (isset($pages) && is_object($pages) && count($pages)) {
+                $pages_by_slug = new Collection();
+                $pages_by_sysname = new Collection();
+                $pages_by_id = new Collection();
+                foreach ($pages as $p => $page) {
+                    $page->extract(1);
+                    $pages_by_slug[$page->start_page ? '/' : $page->slug] = $page;
+                    $pages_by_sysname[$page->sysname] = $page;
+                    $pages_by_id[$page->id] = $page;
+                }
+                $pages = ['by_slug' => $pages_by_slug, 'by_sysname' => $pages_by_sysname, 'by_id' => $pages_by_id];
+            }
+        }
+
+        ## Save cache
+        $cache_lifetime = Config::get('pages.preload_cache_lifetime') ?: NULL;
+        if ($cache_lifetime) {
+            $expiresAt = Carbon::now()->addMinutes($cache_lifetime);
+            Cache::put($cache_key, $pages, $expiresAt);
+        }
+
+        Config::set($cache_key, $pages);
+
+        #Helper::tad($pages);
+    }
+
+    public static function drop_cache() {
+
+        $cache_key = self::$cache_key;
+        Config::set($cache_key, NULL);
+        Cache::forget($cache_key);
+    }
+
+
+    public static function all_by_slug() {
+        $pages = Config::get('app.pages');
+        $pages = @$pages['by_slug'];
+        return $pages ?: NULL;
+    }
+
+    public static function all_by_sysname() {
+        $pages = Config::get('app.pages');
+        $pages = @$pages['by_sysname'];
+        return $pages ?: NULL;
+    }
+
+    public static function all_by_id() {
+        $pages = Config::get('app.pages');
+        $pages = @$pages['by_id'];
+        return $pages ?: NULL;
+    }
+
+
+    public static function by_slug($slug) {
+        $pages = Config::get('app.pages');
+        $page = @$pages['by_slug'][$slug];
+        return $page ?: NULL;
+    }
+
+    public static function by_sysname($sysname) {
+        $pages = Config::get('app.pages');
+        $page = @$pages['by_sysname'][$sysname];
+        return $page ?: NULL;
+    }
+
+    public static function by_id($id) {
+        $pages = Config::get('app.pages');
+        $page = @$pages['by_id'][$id];
+        return $page ?: NULL;
+    }
+
+
+    public static function slug_by_sysname($sysname) {
+        $pages = Config::get('app.pages');
+        $page = @$pages['by_sysname'][$sysname];
+        $slug = NULL;
+        if (isset($page) && is_object($page)) {
+            if ($page->start_page)
+                $slug = '/';
+            elseif ($page->slug)
+                $slug = $page->slug;
+        }
+        return $slug;
+    }
+
+    public function h1_or_name() {
+        return (isset($this->seo) && is_object($this->seo) && isset($this->seo->h1) && $this->seo->h1) ? $this->seo->h1 : $this->name ;
+    }
+
 }
+
+if (!function_exists('pageslug')) {
+    function pageslug($sysname) {
+        return Page::slug_by_sysname($sysname);
+    }
+}
+
+if (!function_exists('pageurl')) {
+    function pageurl($sysname, $params = []) {
+        return URL::route('page', [pageslug($sysname)] + $params);
+    }
+}
+
