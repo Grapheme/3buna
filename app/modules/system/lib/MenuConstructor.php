@@ -517,14 +517,17 @@ class MenuConstructor {
             $route_params = URL::get_modified_parameters($route_name, $route_params);
             #Helper::dd($route_params);
 
-            foreach ($route_params as $key => $value) {
-                #Helper::d("[" . $key . "] => " . $route->getParameter($key) . " = " . $value);
-                /**
-                 * Если хотя бы один из параметров текущего маршрута не совпадает с проверяемым - возвращаем FALSE
-                 */
-                if ($route->getParameter($key) != $value) {
-                    $match = false;
-                    break;
+            if (count($route_params)) {
+
+                foreach ($route_params as $key => $value) {
+                    #Helper::d("[" . $key . "] => " . $route->getParameter($key) . " = " . $value);
+                    /**
+                     * Если хотя бы один из параметров текущего маршрута не совпадает с проверяемым - возвращаем FALSE
+                     */
+                    if ($route->getParameter($key) != $value) {
+                        $match = false;
+                        break;
+                    }
                 }
             }
         }

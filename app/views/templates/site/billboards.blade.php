@@ -43,7 +43,7 @@ if (isset($billboards) && count($billboards)) {
             "photo" => $image,
         ];
         if ($billboard_style == 'yellow')
-            $array["reserved"] = $carbon->format('d.m');
+            $array["reserved"] = $carbon->format('d.m.Y');
         elseif ($billboard_style == 'red')
             $array["available"] = $carbon->diffInDays();
 
