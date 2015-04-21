@@ -125,7 +125,7 @@ class PublicPagesController extends BaseController {
                 ## Regular page
                 Route::any('/{url}', array(
                     'as' => 'page',
-                    'uses' => $class.'@showPage'
+                    'uses' => $class.'@showPageSingle'
                 ));
 
                 ## Main page
@@ -133,7 +133,7 @@ class PublicPagesController extends BaseController {
 
                     Route::any('/', array(
                         'as' => 'mainpage',
-                        'uses' => $class.'@showPage'
+                        'uses' => $class.'@showPageSingle'
                     ));
                 }
             });
@@ -179,11 +179,20 @@ class PublicPagesController extends BaseController {
 	}
 
 
+    ## Функция для просмотра одноязычной страницы
+    public function showPageSingle($slug = false) {
+
+        #dd($slug);
+        return $this->showPage(Config::get('app.locale'), $slug);
+    }
+
     ## Функция для просмотра мультиязычной страницы
-    public function showPage($lang = NULL, $slug = false){
+    public function showPage($lang = NULL, $slug = false) {
+
+        #dd($lang);
 
         if (!$lang)
-            $lang = 'ru';
+            $lang = Config::get('app.locale');
 
         ## Как будем искать страницы - в кеше или в БД?
         if (Config::get('pages.not_cached')) {
