@@ -44,8 +44,10 @@ if (isset($billboards) && count($billboards)) {
         ];
         if ($billboard_style == 'yellow')
             $array["reserved"] = $carbon->format('d.m.Y');
-        elseif ($billboard_style == 'red')
+        elseif ($billboard_style == 'red') {
+            $array["reserved"] = $carbon->format('d.m.Y');
             $array["available"] = $carbon->diffInDays();
+        }
 
         $billboards_for_json[] = $array;
     }
