@@ -656,7 +656,7 @@ class MenuConstructor {
              * Если объявлен модификатор url-адреса для текущего роута - пробуем его применить
              */
             $route_params = URL::get_modified_parameters($route_name, $route_params);
-            #Helper::dd($route_params);
+            #Helper::d($route_params);
 
             if (count($route_params)) {
                 foreach ($route_params as $key => $value) {
